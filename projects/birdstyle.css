@@ -1,0 +1,264 @@
+/* Container for the SVG */
+.svg-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Responsive SVG */
+#parroty {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Optional: Set a max width for the SVG */
+}
+
+/* Additional styles for the parrot animation */
+.parrot .st1 {
+    fill: #FFD700; /* Example color */
+    transition: transform 0.3s ease;
+}
+
+.parrot:hover .st1 {
+    transform: scale(1.1);
+}
+
+.promo {
+    margin-top: 5px;
+}
+
+.cookie {
+    fill: #fec005e9;
+}
+
+.cookie_shadow {
+    fill: #d37d26;
+}
+
+.choco {
+    fill: #662F0D;
+}
+
+/* ...existing code... */
+.special-area  {
+padding: 2rem;
+    border-radius: 1rem;
+background-color:  rgb(67, 67, 67); /* Example style */
+}
+/* ...existing code... */
+
+
+
+span {
+    margin-top: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8ac249;
+    font-size: 40px;
+}
+
+.parrot {
+    animation: floaty 1.75s infinite;
+}
+
+#parroty {
+    position: relative;
+    height: 80vh;
+}
+
+#cookie {
+    position: absolute;
+    height: 20vh;
+    width: 6vw;
+    margin: -67px 0 0 -55px;
+}
+
+#shadow {
+    fill: #2d2e2c;
+    animation: shadow 1.75s infinite;
+    transform-origin: 50% 50%;
+}
+
+
+
+.Wing_Left {
+    animation: shake-left-wing 500ms infinite;
+    transform-origin: 37% 0%;
+    transform-box: fill-box;
+}
+
+.Wing_Right {
+    animation: shake-right-wing 500ms infinite;
+    transform-origin: 57% 0%;
+    transform-box: fill-box;
+}
+
+.Left_Leg {
+    animation: shake-left-leg 1.5s infinite;
+    transform-origin: 66% 0%;
+    transform-box: fill-box;
+}
+
+.Right_Leg {
+    animation: shake-right-leg 2s infinite;
+    transform-origin: 32% 2%;
+    transform-box: fill-box;
+}
+
+.st0 {
+    display: none;
+}
+
+.st1 {
+    fill: #FE931D;
+    stroke: #a55000;
+    stroke-width: 2;
+}
+
+.st2 {
+
+    fill: #fc4619;
+
+}
+
+.st3 {
+    fill: #ecd136;
+}
+
+.st4 {
+    fill: #a03c06;
+}
+
+.st5 {
+    fill: #f9591a;
+}
+
+.st6 {
+    display: none;
+    fill: #ece110;
+}
+
+.st7 {
+    fill: #FFFFFF;
+}
+
+.st8 {
+    stroke: #000000;
+    stroke-miterlimit: 10;
+}
+
+.st9 {
+    fill: #FFFFFF;
+    stroke: #000000;
+    stroke-miterlimit: 10;
+}
+
+.st10 {
+    fill: #ead91d;
+}
+
+@keyframes blink {
+    40% {
+        transform: scaleY(1);
+    }
+
+    45% {
+        transform: scaleY(0.1);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes shake-left-wing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(130deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shake-right-wing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-130deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shake-left-leg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shake-right-leg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes floaty {
+    0% {
+        transform: translateY(25px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+@media screen and (max-width: 414px) {
+    #parroty {
+        width: 100%;
+        height: auto;
+        max-width: 414px; /* Optional: Set a max width for the SVG */
+    }
+    
+}
