@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+} 
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -20,6 +20,41 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
   transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+body {
+  max-width: 1000px;
+  margin: 0 auto ;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* nav */
+nav li a {
+  color: #000;
+  text-decoration: none;
+}
+
+nav li:hover a {
+  text-decoration: underline;
+}
+
+nav {
+  padding: 0 0 1rem 0;
+  overflow: hidden;
+  transition: 250ms height ease-in-out;
+}
+
+.nav-style {
+  display: block;
+  text-align: left;
+  padding: 0.5rem 0;
+}
+
+.navfont {
+  font-size: 1.4rem;
 }
 
 /* Custom styles */
@@ -60,8 +95,6 @@ body {
   border: none;
   background: none;
   cursor: pointer;
-  color: rgb(var(--foreground-rgb));
-  transition: color 0.3s ease;
 }
 
 .tabcontent {
@@ -76,8 +109,6 @@ body {
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: rgb(var(--background-rgb));
-  transition: background-color 0.3s ease;
 }
 
 .service-content {
@@ -101,15 +132,15 @@ body {
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: rgb(var(--primary-rgb));
-  color: rgb(var(--background-rgb));
+  background-color: #000;
+  color: #fff;
   border-radius: 0.25rem;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: rgb(var(--secondary-rgb));
+  background-color: #333;
 }
 
 .responsive-iframe {
@@ -145,7 +176,3 @@ body {
   margin: 0 1rem;
 }
 
-/* Dark mode transitions */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-} 

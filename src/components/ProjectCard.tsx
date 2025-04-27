@@ -37,7 +37,7 @@ export default function ProjectCard({
           <p>{number}</p>
           <h3>{title}</h3>
           <p>{description}</p>
-          <div className="flex gap-4">
+          <div className="flex gap-5">
             {technologies.map((tech, index) => (
               <Image 
                 key={index}
