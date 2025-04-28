@@ -158,18 +158,18 @@ export default function Home() {
         <div className="crop">
           <div className="logo-container">
             <div className="logo-marquee">
-              <Link href="https://wanchanlin.webflow.io/work/rakuten">
-                <Image className="companylogo" src="/images/rakuten.svg" alt="Rakuten" width={100} height={50} />
+              <Link href="https://wanchanlin.webflow.io/work/rakuten" target="_blank" rel="noopener noreferrer">
+                <Image className="companylogo" src="/images/rakuten.svg" alt="Rakuten"alt="XingMobility" width={0} height={0} style={{width: 'auto', height: '50px'}}  />
               </Link>
-              <Link href="https://wanchanlin.webflow.io/work/hongmall" target="_blank">
-                <Image className="companylogo" src="/images/spaceship.svg" alt="Spaceship" width={100} height={50} />
+              <Link href="https://wanchanlin.webflow.io/work/hongmall" target="_blank" rel="noopener noreferrer">
+                <Image className="companylogo" src="/images/spaceship.svg" alt="XingMobility" width={0} height={0} style={{width: 'auto', height: '50px'}} />
               </Link>
-              <Link href="https://wanchanlin.webflow.io/work/hongmall" target="_blank">
-                <Image className="companylogo" src="/images/HongMall.svg" alt="HongMall" width={100} height={50} />
+              <Link href="https://wanchanlin.webflow.io/work/hongmall" target="_blank" rel="noopener noreferrer">
+                <Image className="companylogo" src="/images/HongMall.svg" alt="HongMall" width={0} height={0}  style={{width: 'auto', height: '50px'}} />
               </Link>
-              <Image className="companylogo" src="/images/heys.svg" alt="Heys" width={100} height={50} />
-              <Link href="https://wanchanlin.webflow.io/work/xingmobility" target="_blank">
-                <Image className="companylogo" src="/images/xingmobility.svg" alt="XingMobility" width={100} height={50} />
+              <Image className="companylogo" src="/images/heys.svg" alt="Heys" width={0} height={0} sizes='20vw' style={{width: 'auto', height: '50px'}}  />
+              <Link href="https://wanchanlin.webflow.io/work/xingmobility" target="_blank" rel="noopener noreferrer">
+                <Image className="companylogo" src="/images/xingmobility.svg" alt="XingMobility" width={0} height={0} style={{width: 'auto', height: '50px'}}  />
               </Link>
             </div>
           </div>
@@ -179,5 +179,5 @@ export default function Home() {
         <ContactForm />
       </div>
     </main>
-  )
-} 
+  );
+}
