@@ -15,7 +15,7 @@ export default function Navigation() {
             <img src="/images/logo.svg" alt="logo" className="logo-img" />
           </Link>
 
-          {/* Desktop menu */}
+          {/* menu */}
           <div className="navigation-menu desktop-menu">
             <Link href="#about" className="nav-link">
               About
@@ -30,35 +30,6 @@ export default function Navigation() {
               Contact
             </Link>
           </div>
-
-          {/* Hamburger for mobile */}
-          <button
-            className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg className="hamburger-icon" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-
-          {/* Mobile menu */}
-          {menuOpen && (
-            <div className="navigation-menu mobile-menu">
-              <Link href="#about" className="nav-link" onClick={() => setMenuOpen(false)}>
-                About
-              </Link>
-              <Link href="#services" className="nav-link" onClick={() => setMenuOpen(false)}>
-                Services
-              </Link>
-              <Link href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>
-                Projects
-              </Link>
-              <Link href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>
-                Contact
-              </Link>
-            </div>
-          )}
 
           <ThemeToggle />
         </div>
