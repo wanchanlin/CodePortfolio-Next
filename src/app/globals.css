@@ -4,7 +4,7 @@
 
 :root {
   --foreground: #353535;
-  --background-rgb: 255, 255, 255;
+  --background: #fff;
   --primary-rgb: 0, 0, 0;
   --secondary-rgb: 51, 51, 51;
   --button: #c7ebbc;
@@ -12,7 +12,7 @@
 
 .dark {
   --foreground: #fff;
-  --background-rgb: 26, 26, 26;
+  --background: #262626;
   --primary-rgb: 255, 255, 255;
   --secondary-rgb: 229, 229, 229;
   --button: #67e242;
@@ -23,18 +23,18 @@
 body {
   max-width: 1000px;
   margin: 0 auto ;
-  color: rgb(var(--foreground));
-  background: rgb(var(--background-rgb));
+  color:var(--foreground);
+  background: var(--background);
   transition: color 0.3s ease, background-color 0.3s ease;
 
 }
 
-h1 {
+/* h1 {
   color: var(--foreground);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-}
+} */
 
 
 
