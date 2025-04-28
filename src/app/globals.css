@@ -180,6 +180,7 @@ footer a {
   min-height: 300px;
 }
 
+/* companylogo */
 .crop {
   overflow: hidden;
   width: 100%;
@@ -195,6 +196,11 @@ footer a {
   animation: marquee 20s linear infinite;
 }
 
+.companylogo {
+  display: flex;
+  margin: 0 1rem;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -204,10 +210,4 @@ footer a {
   }
 }
 
-.companylogo {
-  display: flex;
-  width: 100px;
-  height: 50px;
-  object-fit: contain;
-  margin: 0 1rem;
-}
+
