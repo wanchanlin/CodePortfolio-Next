@@ -263,7 +263,6 @@ export default function Home() {
                   className="companylogo"
                   src="/images/rakuten.svg"
                   alt="Rakuten"
-                  alt="XingMobility"
                 />
               </Link>
               <Link
