@@ -1,15 +1,27 @@
 import React from 'react'
-
-import Image from 'next/image'
+import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
-interface ProjectPageProps {
-  params: {
-    slug: string
-  }
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  images: string[];
+  features: string[];
+  demo: string;
+  github: string;
+  videoUrl?: string;
 }
 
-const projectData = {
+// Define page props interface
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+const projects: Record<string, Project> = {
   powerOfBalance: {
     title: 'National Parks Project',
     description: 'A comprehensive project for managing and exploring national parks information.',
@@ -80,12 +92,20 @@ const projectData = {
     ],
     demo: "https://demo-project1.com",
     github: "https://github.com/yourusername/project1",
-
   }
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectData[params.slug as keyof typeof projectData]
+// Generate metadata for the page
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const project = projects[params.slug]
+  return {
+    title: project?.title || 'Project Not Found',
+    description: project?.description || 'Project details'
+  }
+}
+
+export default function ProjectPage({ params }: PageProps) {
+  const project = projects[params.slug]
 
   if (!project) {
     return (
