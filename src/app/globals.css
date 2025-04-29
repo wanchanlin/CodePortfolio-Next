@@ -139,8 +139,21 @@ footer a {
   cursor: pointer;
 }
 
+/* Hover state */
+.tablinks:hover {
+  background: var(--button); /* using your theme button color */
+}
+
+/* Active/Selected tab */
+.tablinks.active {
+  background: var(--button);
+  color: var(--foreground);
+}
+
 .tabcontent {
   display: none;
+  border: 1px solid var(--foreground);
+  border-radius: 0.5rem;
 }
 
 .tabcontent.active {
@@ -158,6 +171,7 @@ footer a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  
 }
 
 .iconcontainer {
@@ -243,4 +257,26 @@ iframe {
 }
 .contact-social-wrapper > div {
   flex: 1; /* each side takes equal width */
+}
+
+.theme-image-container {
+  position: relative;
+}
+
+.theme-image {
+  transition: opacity 0.3s ease;
+}
+
+/* Light theme (default) */
+.theme-image.dark {
+  display: none;
+}
+
+/* Dark theme */
+.dark .theme-image.light {
+  display: none;
+}
+
+.dark .theme-image.dark {
+  display: block;
 }
