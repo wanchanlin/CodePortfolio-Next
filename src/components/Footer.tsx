@@ -9,7 +9,7 @@ export default function Footer() {
       
        
           <div>
-            <p>© 2024 Portfolio. All rights reserved.</p>
+            <p>© 2025 Joyce's Portfolio. All rights reserved.</p>
           </div>
           <div>
             <Link href="/privacy">
