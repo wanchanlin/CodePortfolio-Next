@@ -5,15 +5,34 @@ import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import ContactForm from "../components/ContactForm";
+import { useTheme } from 'next-themes';
+
+function ThemeImage({ lightSrc, darkSrc, alt, width, height, className }) {
+  const { theme } = useTheme();
+  
+  return (
+    <div className="theme-image-container">
+      <Image
+        src={theme === 'dark' ? darkSrc : lightSrc}
+        alt={alt}
+        width={width}
+        height={height}
+        className={`theme-image ${className || ''}`}
+      />
+    </div>
+  );
+}
 
 const projects = [
   {
     number: "01",
     title: "Balance of Power",
-    description:
-      "A project admin can manage national park info and the users can view and save their",
+    description: "A project admin can manage national park info and the users can view and save their",
     technologies: ["Html", "Css", "Js"],
-    imageSrc: "/images/project3.svg",
+    imageSrc: {
+      light: "/images/project3-light.svg",
+      dark: "/images/project3-dark.svg"
+    },
     link: "/projects/powerOfBalance",
   },
   {
@@ -22,7 +41,10 @@ const projects = [
     description:
       "A project admin can manage national park info and the users can view and save their",
     technologies: ["Html", "Css", "Js", "php"],
-    imageSrc: "/images/project3.svg",
+    imageSrc: {
+      light: "/images/project3-light.svg",
+      dark: "/images/project3-dark.svg"
+    },
     link: "/projects/birdIP",
   },
   {
@@ -31,7 +53,10 @@ const projects = [
     description:
       "A project admin can manage national park info and the users can view and save their",
     technologies: ["Html", "Css", "Js", "php", "mysql"],
-    imageSrc: "/images/project3.svg",
+    imageSrc: {
+      light: "/images/project3-light.svg",
+      dark: "/images/project3-dark.svg"
+    },
     link: "/projects/nationalParks",
   },
   {
@@ -40,7 +65,10 @@ const projects = [
     description:
       "A project that explores the differences between Earth and Mars by using APIs",
     technologies: ["pug", "Css", "node", "Js"],
-    imageSrc: "/images/project2.svg",
+    imageSrc: {
+      light: "/images/project3-light.svg",
+      dark: "/images/project3-dark.svg"
+    },
     link: "/projects/weather",
   },
   {
@@ -48,8 +76,11 @@ const projects = [
     title: "ANIMATION PROJECT",
     description: "joyce's first coding project",
     technologies: ["Html", "Css", "Js"],
-    imageSrc: "/images/project1.svg",
-    link: "/projects/birdanimation",
+    imageSrc: {
+      light: "/images/birdanimation-light.svg",
+      dark: "/images/animation.svg"
+    },
+        link: "/projects/birdanimation",
   },
 ];
 
@@ -248,7 +279,17 @@ export default function Home() {
         <h2 id="projects">{`{ PROJECTS }`}</h2>
         <div className="grid-container">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <div key={index} className="project-card">
+              <ThemeImage
+                lightSrc={project.imageSrc.light}
+                darkSrc={project.imageSrc.dark}
+                alt={project.title}
+                width={400}
+                height={300}
+              />
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
           ))}
         </div>
 

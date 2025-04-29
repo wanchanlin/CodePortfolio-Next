@@ -90,7 +90,7 @@ const projects: Record<string, Project> = {
       'Smooth transitions',
       'Cross-browser compatibility'
     ],
-    demo: "https://demo-project1.com",
+    demo: "https://animation-project-lemon.vercel.app/",
     github: "https://github.com/wanchanlin/AnimationProject",
   }
 }
