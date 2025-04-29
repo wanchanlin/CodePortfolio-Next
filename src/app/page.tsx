@@ -53,12 +53,12 @@ const projects = [
   },
 ];
 
-function openService(tab: string) {
-  setActiveTab(tab);
-}
-
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Program");
+
+  function openService(tab: string) {
+    setActiveTab(tab);
+  }
 
   return (
     <main className="min-h-screen">
