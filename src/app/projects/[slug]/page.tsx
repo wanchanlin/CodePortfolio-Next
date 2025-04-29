@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -9,7 +10,7 @@ interface ProjectPageProps {
 }
 
 const projectData = {
-  nationalParks: {
+  powerOfBalance: {
     title: 'National Parks Project',
     description: 'A comprehensive project for managing and exploring national parks information.',
     technologies: ['Html', 'Css', 'Js', 'php', 'mysql'],
@@ -19,7 +20,38 @@ const projectData = {
       'User-friendly interface for park exploration',
       'Real-time data updates',
       'Interactive maps and guides'
-    ]
+    ],
+    demo: "https://demo-project1.com",
+    github: "https://github.com/yourusername/project1",
+  },
+  birdIP: {
+    title: 'BirdIP',
+    description: 'A comprehensive project for managing and exploring national parks information.',
+    technologies: ['Html', 'Css', 'Js', 'php', 'mysql'],
+    images: ['/images/project3.svg'],
+    features: [
+      'Admin dashboard for park management',
+      'User-friendly interface for park exploration',
+      'Real-time data updates',
+      'Interactive maps and guides'
+    ],
+    demo: "https://demo-project1.com",
+    github: "https://github.com/yourusername/project1",
+  },
+  nationalParks: {
+    videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID", // Optional
+    title: 'National Parks Project',
+    description: 'A comprehensive project for managing and exploring national parks information.',
+    technologies: ['Html', 'Css', 'Js', 'php', 'mysql'],
+    images: ['/images/project3.svg'],
+    features: [
+      'Admin dashboard for park management',
+      'User-friendly interface for park exploration',
+      'Real-time data updates',
+      'Interactive maps and guides'
+    ],
+    demo: "https://demo-project1.com",
+    github: "https://github.com/yourusername/project1",
   },
   weather: {
     title: 'Earth V.S. Mars Weather',
@@ -31,7 +63,9 @@ const projectData = {
       'Interactive visualizations',
       'Historical data analysis',
       'API integration'
-    ]
+    ],  
+    demo: "https://demo-project1.com",
+    github: "https://github.com/yourusername/project1",
   },
   birdanimation: {
     title: 'Animation Project',
@@ -43,7 +77,10 @@ const projectData = {
       'Responsive design',
       'Smooth transitions',
       'Cross-browser compatibility'
-    ]
+    ],
+    demo: "https://demo-project1.com",
+    github: "https://github.com/yourusername/project1",
+
   }
 }
 
@@ -53,8 +90,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
+        <div>
+          <h1>Project Not Found</h1>
           <Link href="/" className="text-blue-500 hover:underline">
             Return to Home
           </Link>
@@ -64,33 +101,44 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="min-h-screen py-8">
-      <div className="container mx-auto px-4">
-        <Link href="/" className="text-blue-500 hover:underline mb-8 inline-block">
-          ← Back to Projects
-        </Link>
-        
-        <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-        <p className="text-lg mb-8">{project.description}</p>
+    <main className="project-container">
+      <Link href="/" className="btn">
+        ← Back to Projects
+      </Link>
+      
+     
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div className="project-content">
+        <h1>{project.title}</h1>
+        <p>{project.description}</p>
+
+        {project.videoUrl && (
+          <div className="video-container">
+            <iframe
+              className="responsive-iframe"
+              src={project.videoUrl}
+              title="Project Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
+        <div>
           {project.images.map((image, index) => (
             <div key={index} className="relative h-64">
-              <Image
+              <img
                 src={image}
                 alt={`${project.title} screenshot ${index + 1}`}
-                fill
-                className="object-cover rounded-lg"
               />
             </div>
           ))}
         </div>
 
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Technologies Used</h2>
-          <div className="flex flex-wrap gap-4">
+        <div>
+          <h2>Technologies Used</h2>
+          <div>
             {project.technologies.map((tech, index) => (
-              <div key={index} className="flex items-center gap-2">
+              <div key={index}>
                 <Image
                   src={`/images/${tech}.svg`}
                   alt={tech}
@@ -104,13 +152,35 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold mb-4">Features</h2>
-          <ul className="list-disc pl-6">
+          <h2>Features</h2>
+          <ul>
             {project.features.map((feature, index) => (
-              <li key={index} className="mb-2">{feature}</li>
+              <li key={index}>{feature}</li>
             ))}
           </ul>
         </div>
+        <div className="project-links">
+        {project.github && (
+          <Link 
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+          >
+            GitHub
+          </Link>
+        )}
+        {project.demo && (
+          <Link 
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+          >
+            Live Demo
+          </Link>
+        )}
+      </div>
       </div>
     </main>
   )

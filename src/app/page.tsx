@@ -14,7 +14,7 @@ const projects = [
       "A project admin can manage national park info and the users can view and save their",
     technologies: ["Html", "Css", "Js"],
     imageSrc: "/images/project3.svg",
-    link: "/projects/nationalParks",
+    link: "/projects/powerOfBalance",
   },
   {
     number: "02",
@@ -23,7 +23,7 @@ const projects = [
       "A project admin can manage national park info and the users can view and save their",
     technologies: ["Html", "Css", "Js", "php"],
     imageSrc: "/images/project3.svg",
-    link: "/projects/nationalParks",
+    link: "/projects/birdIP",
   },
   {
     number: "03",
