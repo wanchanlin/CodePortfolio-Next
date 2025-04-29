@@ -32,12 +32,12 @@ export default function ProjectCard({
           height={300}
         />
       </div>
-      <div className="grid-item alignment">
+      <div className="grid-item">
         <div className="project-content">
           <p>{number}</p>
-          <h3>{title}</h3>
+          <p className='project-title'>{title}</p>
           <p>{description}</p>
-          <div className="flex gap-5">
+          <div>
             {technologies.map((tech, index) => (
               <Image 
                 key={index}

@@ -17,7 +17,7 @@ export default function Navigation() {
 
           {/* menu */}
           <div className="navigation-menu desktop-menu">
-            <Link href="#about" className="nav-link">
+            <Link href="/about" className="nav-link">
               About
             </Link>
             <Link href="#services" className="nav-link">

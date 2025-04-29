@@ -3,38 +3,38 @@ import Image from 'next/image'
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen py-8">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-8">About Me</h1>
+    <main>
+      <div>
+        <h1>About Me</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div>
           <div>
-            <h2 className="text-2xl font-bold mb-4">Professional Journey</h2>
-            <p className="mb-4">
+            <h2>Professional Journey</h2>
+            <p>
               With over 9 years of experience in the technology industry, I've developed a unique blend of skills
               in both design and development. My journey began with a passion for creating beautiful and functional
               digital experiences.
             </p>
-            <p className="mb-4">
+            <p>
               Throughout my career, I've worked with clients across various industries, including entertainment,
               fashion, and technology. This diverse experience has allowed me to develop a versatile skill set
               and a deep understanding of different market needs.
             </p>
           </div>
           
-          <div className="relative h-64">
-            <Image
+          <div>
+            <img
               src="/images/profile.jpg"
               alt="Professional photo"
-              fill
+              
               className="object-cover rounded-lg"
             />
           </div>
         </div>
 
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Skills & Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2>Skills & Expertise</h2>
+          <div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Development</h3>
               <ul className="list-disc pl-6">
@@ -46,8 +46,8 @@ export default function AboutPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">Design</h3>
-              <ul className="list-disc pl-6">
+              <h3>Design</h3>
+              <ul>
                 <li>UI/UX Design</li>
                 <li>Graphic Design</li>
                 <li>Motion Graphics</li>
@@ -59,19 +59,16 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold mb-4">Education & Certifications</h2>
-          <div className="space-y-4">
+          <h2>Education & Certifications</h2>
+          <div>
             <div>
-              <h3 className="text-xl font-semibold">Bachelor's Degree in Computer Science</h3>
-              <p className="text-gray-600">University Name, Year</p>
+              <h3>Bachelor's Degree in Computer Science</h3>
+              <p>University Name, Year</p>
             </div>
+            
             <div>
-              <h3 className="text-xl font-semibold">UI/UX Design Certification</h3>
-              <p className="text-gray-600">Institution Name, Year</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Full Stack Development Bootcamp</h3>
-              <p className="text-gray-600">Institution Name, Year</p>
+              <h3>Web Development Postgraduate Certificate</h3>
+              <p>Humber College, 2025</p>
             </div>
           </div>
         </div>
