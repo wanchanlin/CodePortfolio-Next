@@ -23,9 +23,9 @@ interface PageProps {
 
 const projects: Record<string, Project> = {
   powerOfBalance: {
-    title: 'National Parks Project',
+    title: 'Power Of Balance',
     description: 'A comprehensive project for managing and exploring national parks information.',
-    technologies: ['Html', 'Css', 'Js', 'php', 'mysql'],
+    technologies: ['Html', 'Css', 'Js'],
     images: ['/images/project3.svg'],
     features: [
       'Admin dashboard for park management',
@@ -62,8 +62,8 @@ const projects: Record<string, Project> = {
       'Real-time data updates',
       'Interactive maps and guides'
     ],
-    demo: "https://demo-project1.com",
-    github: "https://github.com/yourusername/project1",
+    demo: "https://lavender-dolphin-454296.hostingersite.com/index.php",
+    github: "https://github.com/wanchanlin/national-parks-ecology",
   },
   weather: {
     title: 'Earth V.S. Mars Weather',
@@ -76,7 +76,7 @@ const projects: Record<string, Project> = {
       'Historical data analysis',
       'API integration'
     ],  
-    demo: "https://demo-project1.com",
+    demo: "https://animation-project-lemon.vercel.app/",
     github: "https://github.com/yourusername/project1",
   },
   birdanimation: {
@@ -91,7 +91,7 @@ const projects: Record<string, Project> = {
       'Cross-browser compatibility'
     ],
     demo: "https://demo-project1.com",
-    github: "https://github.com/yourusername/project1",
+    github: "https://github.com/wanchanlin/AnimationProject",
   }
 }
 
