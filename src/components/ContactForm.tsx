@@ -28,14 +28,37 @@ export default function ContactForm() {
 
   return (
     <div className="contact-social-wrapper">
-      
       <div>
-      <p>Follow me</p>
-      <p>Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project and provide help.</p>
-      <div>
-        <img className="social-icon" src="/images/github.svg" alt="contact" />
-        <img className="social-icon" src="/images/linkedin.svg" alt="contact" />
-      </div>
+        <p>Follow me</p>
+        <p>
+          Have some big idea or brand to develop and need help? Then reach out
+          we'd love to hear about your project and provide help.
+        </p>
+        <div>
+          <a
+            href="https://github.com/wanchanlin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="social-icon"
+              src="/images/github.svg"
+              alt="contact"
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/wanchanlin/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="social-icon"
+              src="/images/linkedin.svg"
+              alt="contact"
+            />
+          </a>
+        </div>
       </div>
       <div>
         <form onSubmit={handleSubmit}>
@@ -47,19 +70,18 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-             
               required
             />
           </div>
           <div>
-            <label> Email </label><br/>
+            <label> Email </label>
+            <br />
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              
               required
             />
           </div>
