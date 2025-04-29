@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
@@ -53,11 +53,13 @@ const projects = [
   },
 ];
 
-function openService(serviceName: string) {
-  // Implementation will be added later
+function openService(tab: string) {
+  setActiveTab(tab);
 }
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("Program");
+
   return (
     <main className="min-h-screen">
       <div className="content">
@@ -109,15 +111,15 @@ export default function Home() {
         <section>
           <h2 id="services">{`{ SERVICES }`}</h2>
           <div className="tabs">
-            <button className="tablinks" onClick={() => openService("Program")}>
+            <button className="tablinks" onClick={() => setActiveTab("Program")}>
               Program
             </button>
-            <button className="tablinks" onClick={() => openService("Design")}>
+            <button className="tablinks" onClick={() => setActiveTab("Design")}>
               Design
             </button>
           </div>
 
-          <div id="Program" className="tabcontent">
+          <div id="Program" className={`tabcontent${activeTab === "Program" ? " active" : ""}`}>
             <div className="card">
               <div className="service-content">
                 <Image
@@ -189,7 +191,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="Design" className="tabcontent">
+          <div id="Design" className={`tabcontent${activeTab === "Design" ? " active" : ""}`}>
             <div className="card">
               <div className="service-content">
                 <Image
