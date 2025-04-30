@@ -25,8 +25,7 @@ text-align: center;
 }
 
 body {
-  max-width: 1000px;
-  margin: 0 auto;
+  
   color: var(--foreground);
   background: var(--background);
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -110,6 +109,10 @@ footer a {
 
 .project-content {
   padding: 2rem;
+}
+.project{
+  width: 100%;
+  height: auto;
 }
 
 .typing-cursor {
@@ -336,15 +339,13 @@ iframe {
 }
 .content{
   margin-top: 100px;
+ 
 }
 
 .logo-img {
   height: 2rem;
   width: auto;
 }
-/* .navigation{
-  position: relative;
-} */
 
 /* Mobile menu button styles */
 .mobile-menu-button {

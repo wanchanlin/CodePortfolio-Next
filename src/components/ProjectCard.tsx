@@ -24,12 +24,10 @@ export default function ProjectCard({
   return (
     <>
       <div className="grid-item">
-        <Image 
+        <img
           className="project" 
           src={imageSrc} 
           alt={title} 
-          width={500} 
-          height={300}
         />
       </div>
       <div className="grid-item">

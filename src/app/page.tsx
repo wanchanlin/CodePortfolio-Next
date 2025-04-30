@@ -61,7 +61,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main>
       <div className="content">
         <section>
           <div className="grid-container">
