@@ -1,0 +1,40 @@
+'use client';
+import Navigation from '../components/Navigation';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+
+function ThemeImage({ lightSrc, darkSrc, alt }) {
+  // ... ThemeImage component code
+}
+
+const projects = [
+  // ... your projects array
+];
+
+export default function Home() {
+  return (
+    <>
+      <Navigation />
+      <div className="min-h-screen">
+        <div className="content">
+          <section>
+            <div className="grid-container">
+              {projects.map((project, index) => (
+                <div key={index} className="project-card">
+                  <ThemeImage
+                    lightSrc={project.imageSrc.light}
+                    darkSrc={project.imageSrc.dark}
+                    alt={project.title}
+                  />
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    </>
+  );
+}

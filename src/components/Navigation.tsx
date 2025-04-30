@@ -7,6 +7,10 @@ import { ThemeToggle } from "./ThemeToggle";
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="navigation">
       <div className="navigation-container">
@@ -15,18 +19,31 @@ export default function Navigation() {
             <img src="/images/logo.svg" alt="logo" className="logo-img" />
           </Link>
 
-          {/* menu */}
-          <div className="navigation-menu desktop-menu">
-            <Link href="/about" className="nav-link">
+          {/* Hamburger Menu Button */}
+          <button 
+            className="mobile-menu-button md:hidden"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger-icon ${menuOpen ? 'open' : ''}`}>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </span>
+          </button>
+
+          {/* Desktop and Mobile Menu */}
+          <div className={`navigation-menu ${menuOpen ? 'show-mobile-menu' : ''}`}>
+            <Link href="/about" className="nav-link" onClick={() => setMenuOpen(false)}>
               About
             </Link>
-            <Link href="#services" className="nav-link">
+            <Link href="#services" className="nav-link" onClick={() => setMenuOpen(false)}>
               Services
             </Link>
-            <Link href="#projects" className="nav-link">
+            <Link href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>
               Projects
             </Link>
-            <Link href="#contact" className="nav-link">
+            <Link href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>
               Contact
             </Link>
           </div>
