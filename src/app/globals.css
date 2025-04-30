@@ -359,9 +359,9 @@ iframe {
   background-color: var(--button);
 }
 .hamburger-icon {
- 
-  width: 1.5rem;
-  height: 1.25rem;
+  position: relative;
+  width: 24px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -371,7 +371,24 @@ iframe {
   width: 100%;
   height: 2px;
   background-color: currentColor;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
+  transform-origin: left;
+}
+
+/* Animation for open state */
+.hamburger-icon.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  width: 28px; /* Slightly longer for better appearance */
+}
+
+.hamburger-icon.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger-icon.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  width: 28px; /* Slightly longer for better appearance */
 }
 
 /* Navigation menu styles */
