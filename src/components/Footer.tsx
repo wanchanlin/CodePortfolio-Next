@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
+      
         <div className="footer-content">
           <div className="footer-copyright">
             <p>© 2025 Joyce's Portfolio. All rights reserved.</p>
@@ -22,7 +22,7 @@ export default function Footer() {
               Security
             </Link>
           </div>
-        </div>
+        
       </div>
     </footer>
   )

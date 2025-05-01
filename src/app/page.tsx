@@ -7,24 +7,24 @@ import ProjectCard from "../components/ProjectCard";
 import ContactForm from "../components/ContactForm";
 
 const projects = [
-  {
-    number: "01",
-    title: "Balance of Power",
-    description:
-      "A project admin can manage national park info and the users can view and save their",
-    technologies: ["Html", "Css", "Js"],
-    imageSrc: "/images/project3.svg",
-    link: "/projects/powerOfBalance",
-  },
-  {
-    number: "02",
-    title: "Bird IP",
-    description:
-      "A project admin can manage national park info and the users can view and save their",
-    technologies: ["Html", "Css", "Js", "php"],
-    imageSrc: "/images/project3.svg",
-    link: "/projects/birdIP",
-  },
+  // {
+  //   number: "01",
+  //   title: "Balance of Power",
+  //   description:
+  //     "A project admin can manage national park info and the users can view and save their",
+  //   technologies: ["Html", "Css", "Js"],
+  //   imageSrc: "/images/project3.svg",
+  //   link: "/projects/powerOfBalance",
+  // },
+  // {
+  //   number: "02",
+  //   title: "Bird IP",
+  //   description:
+  //     "A project admin can manage national park info and the users can view and save their",
+  //   technologies: ["Html", "Css", "Js", "php"],
+  //   imageSrc: "/images/project3.svg",
+  //   link: "/projects/birdIP",
+  // },
   {
     number: "03",
     title: "National Parks Ecology",
