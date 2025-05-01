@@ -31,7 +31,7 @@ const projects = [
     description:
       "A project admin can manage national park info and the users can view and save their",
     technologies: ["Html", "Css", "Js", "php", "mysql"],
-    imageSrc: "/images/project3.svg",
+    imageSrc: "/images/npe.svg",
     link: "/projects/nationalParks",
   },
   {
@@ -40,7 +40,7 @@ const projects = [
     description:
       "A project that explores the differences between Earth and Mars by using APIs",
     technologies: ["pug", "Css", "node", "Js"],
-    imageSrc: "/images/project2.svg",
+    imageSrc: "/images/evm.svg",
     link: "/projects/weather",
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     title: "ANIMATION PROJECT",
     description: "joyce's first coding project",
     technologies: ["Html", "Css", "Js"],
-    imageSrc: "/images/project1.svg",
+    imageSrc: "/images/animation.svg",
     link: "/projects/birdanimation",
   },
 ];

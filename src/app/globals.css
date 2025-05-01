@@ -25,7 +25,7 @@ text-align: center;
 }
 
 body {
-  
+ 
   color: var(--foreground);
   background: var(--background);
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -339,6 +339,8 @@ iframe {
 }
 .content{
   margin-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
  
 }
 
@@ -357,7 +359,7 @@ iframe {
   z-index: 2;
 }
 .hamburger-icon .bar {
-  background-color: var(--button);
+  background-color:  #67e242;
 }
 .hamburger-icon {
   position: relative;
