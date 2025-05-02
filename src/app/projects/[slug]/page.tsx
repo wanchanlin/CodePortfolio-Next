@@ -1,7 +1,7 @@
-import React from 'react'
-import { Metadata } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -23,89 +23,96 @@ interface PageProps {
 
 const projects: Record<string, Project> = {
   powerOfBalance: {
-    title: 'Power Of Balance',
-    description: 'A comprehensive project for managing and exploring national parks information.',
-    technologies: ['Html', 'Css', 'Js'],
-    images: ['/images/project3.svg'],
+    title: "Power Of Balance",
+    description:
+      "A comprehensive project for managing and exploring national parks information.",
+    technologies: ["Html", "Css", "Js"],
+    images: ["/images/project3.svg"],
     features: [
-      'Admin dashboard for park management',
-      'User-friendly interface for park exploration',
-      'Real-time data updates',
-      'Interactive maps and guides'
+      "Admin dashboard for park management",
+      "User-friendly interface for park exploration",
+      "Real-time data updates",
+      "Interactive maps and guides",
     ],
     demo: "https://demo-project1.com",
     github: "https://github.com/yourusername/project1",
   },
   birdIP: {
-    title: 'BirdIP',
-    description: 'A comprehensive project for managing and exploring national parks information.',
-    technologies: ['Html', 'Css', 'Js', 'php', 'mysql'],
-    images: ['/images/project3.svg'],
+    title: "BirdIP",
+    description:
+      "A comprehensive project for managing and exploring national parks information.",
+    technologies: ["Html", "Css", "Js", "php", "mysql"],
+    images: ["/images/project3.svg"],
     features: [
-      'Admin dashboard for park management',
-      'User-friendly interface for park exploration',
-      'Real-time data updates',
-      'Interactive maps and guides'
+      "Admin dashboard for park management",
+      "User-friendly interface for park exploration",
+      "Real-time data updates",
+      "Interactive maps and guides",
     ],
     demo: "https://demo-project1.com",
     github: "https://github.com/yourusername/project1",
   },
   nationalParks: {
     videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID", // Optional
-    title: 'National Parks Project',
-    description: 'A comprehensive project for managing and exploring national parks information.',
-    technologies: ['Html', 'Css', 'Js', 'php', 'mysql'],
-    images: ['/images/project3.svg'],
+    title: "National Parks Project",
+    description:
+      "A comprehensive project for managing and exploring national parks information.",
+    technologies: ["Html", "Css", "Js", "php", "mysql"],
+    images: ["/images/project3.svg"],
     features: [
-      'Admin dashboard for park management',
-      'User-friendly interface for park exploration',
-      'Real-time data updates',
-      'Interactive maps and guides'
+      "Admin dashboard for park management",
+      "User-friendly interface for park exploration",
+      "Real-time data updates",
+      "Interactive maps and guides",
     ],
     demo: "https://lavender-dolphin-454296.hostingersite.com/index.php",
     github: "https://github.com/wanchanlin/national-parks-ecology",
   },
   weather: {
-    title: 'Earth V.S. Mars Weather',
-    description: 'Compare weather conditions between Earth and Mars using real-time data.',
-    technologies: ['pug', 'Css', 'node', 'Js'],
-    images: ['/images/project2.svg'],
+    title: "Earth V.S. Mars Weather",
+    description:
+      "Compare weather conditions between Earth and Mars using real-time data.",
+    technologies: ["pug", "Css", "node", "Js"],
+    images: ["/images/project2.svg"],
     features: [
-      'Real-time weather data comparison',
-      'Interactive visualizations',
-      'Historical data analysis',
-      'API integration'
-    ],  
+      "Real-time weather data comparison",
+      "Interactive visualizations",
+      "Historical data analysis",
+      "API integration",
+    ],
     demo: "https://animation-project-lemon.vercel.app/",
     github: "https://github.com/yourusername/project1",
   },
   birdanimation: {
-    title: 'Animation Project',
-    description: 'A creative animation project showcasing various bird species.',
-    technologies: ['Html', 'Css', 'Js'],
-    images: ['/images/project1.svg'],
+    title: "Animation Project",
+    description:
+      "A creative animation project showcasing various bird species.",
+    technologies: ["Html", "Css", "Js"],
+    images: ["/images/project1.svg"],
     features: [
-      'Interactive animations',
-      'Responsive design',
-      'Smooth transitions',
-      'Cross-browser compatibility'
+      "Interactive animations",
+      "Responsive design",
+      "Smooth transitions",
+      "Cross-browser compatibility",
     ],
     demo: "https://demo-project1.com",
     github: "https://github.com/wanchanlin/AnimationProject",
-  }
-}
+  },
+};
 
 // Generate metadata for the page
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const project = projects[params.slug]
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const project = projects[params.slug];
   return {
-    title: project?.title || 'Project Not Found',
-    description: project?.description || 'Project details'
-  }
+    title: project?.title || "Project Not Found",
+    description: project?.description || "Project details",
+  };
 }
 
 export default function ProjectPage({ params }: PageProps) {
-  const project = projects[params.slug]
+  const project = projects[params.slug];
 
   if (!project) {
     return (
@@ -117,16 +124,14 @@ export default function ProjectPage({ params }: PageProps) {
           </Link>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <main className="project-container">
-      <Link href="/" className="btn">
+      <Link href="/" className="hyperlink">
         ← Back to Projects
       </Link>
-      
-     
 
       <div className="project-content">
         <h1>{project.title}</h1>
@@ -149,59 +154,60 @@ export default function ProjectPage({ params }: PageProps) {
               <img
                 src={image}
                 alt={`${project.title} screenshot ${index + 1}`}
+                className="project-image"
               />
             </div>
           ))}
         </div>
-
-        <div>
-          <h2>Technologies Used</h2>
+        <div className="features-container">
           <div>
-            {project.technologies.map((tech, index) => (
-              <div key={index}>
-                <Image
-                  src={`/images/${tech}.svg`}
-                  alt={tech}
-                  width={24}
-                  height={24}
-                />
-                <span>{tech}</span>
-              </div>
-            ))}
+            <h2>Technologies Used</h2>
+            <div className="technologies-container">
+              {project.technologies.map((tech, index) => (
+                <div key={index}>
+                  <Image
+                    src={`/images/${tech}.svg`}
+                    alt={tech}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2>Features</h2>
+            <ul>
+              {project.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
           </div>
         </div>
-
-        <div>
-          <h2>Features</h2>
-          <ul>
-            {project.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </div>
         <div className="project-links">
-        {project.github && (
-          <Link 
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            GitHub
-          </Link>
-        )}
-        {project.demo && (
-          <Link 
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Live Demo
-          </Link>
-        )}
-      </div>
+          {project.github && (
+            <Link
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              GitHub
+            </Link>
+          )}
+          {project.demo && (
+            <Link
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              Live Demo
+            </Link>
+          )}
+        </div>
       </div>
     </main>
-  )
-} 
+  );
+}
