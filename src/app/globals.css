@@ -450,7 +450,7 @@ iframe {
   margin: 100px auto 0 auto;
   width: 100%;
 }
-.project-content{
+.project-page-content{
   display: flex;
   flex-direction: column;
   gap: 2rem;
