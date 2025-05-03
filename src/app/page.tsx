@@ -16,20 +16,20 @@ const projects = [
   //   imageSrc: "/images/project3.svg",
   //   link: "/projects/powerOfBalance",
   // },
-  // {
-  //   number: "02",
-  //   title: "Bird IP",
-  //   description:
-  //     "A project admin can manage national park info and the users can view and save their",
-  //   technologies: ["Html", "Css", "Js", "php"],
-  //   imageSrc: "/images/project3.svg",
-  //   link: "/projects/birdIP",
-  // },
+  {
+    number: "02",
+    title: "Bird IP",
+    description:
+      "A project admin can manage national park info and the users can view and save their",
+    technologies: ["Html", "Css", "Js", "php"],
+    imageSrc: "/images/birdIP.svg",
+    link: "/projects/birdIP",
+  },
   {
     number: "03",
     title: "National Parks Ecology",
     description:
-      "A project admin can manage national park info and the users can view and save their",
+      "A project admin can manage national park info\nand the users can view and save their information",
     technologies: ["Html", "Css", "Js", "php", "mysql"],
     imageSrc: "/images/npe.svg",
     link: "/projects/nationalParks",
