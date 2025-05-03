@@ -34,8 +34,8 @@ const projects: Record<string, Project> = {
       "Real-time data updates",
       "Interactive maps and guides",
     ],
-    demo: "https://demo-project1.com",
-    github: "https://github.com/yourusername/project1",
+    demo: "https://balanceofpower.kvieve.com/",
+    github: "https://github.com/awsactivators/balance-of-power-game.git",
   },
   birdIP: {
     title: "BirdIP",
@@ -133,7 +133,7 @@ export default function ProjectPage({ params }: PageProps) {
         ← Back to Projects
       </Link>
 
-      <div className="project-content">
+      <div className="project-page-content">
         <h1>{project.title}</h1>
         <p>{project.description}</p>
 

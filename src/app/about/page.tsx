@@ -1,7 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
 
 export default function AboutPage() {
+  const [activeTab, setActiveTab] = useState("Program");
+
   return (
     <main>
       <div>
@@ -31,6 +35,144 @@ export default function AboutPage() {
             />
           </div>
         </div>
+        
+        <section>
+          <h2 id="services">{`{ SERVICES }`}</h2>
+          <div className="tabs">
+            <button className="tablinks" onClick={() => setActiveTab("Program")}>
+              Program
+            </button>
+            <button className="tablinks" onClick={() => setActiveTab("Design")}>
+              Design
+            </button>
+          </div>
+
+          <div id="Program" className={`tabcontent${activeTab === "Program" ? " active" : ""}`}>
+            <div className="card">
+              <div className="service-content">
+                <Image
+                  className="icon"
+                  src="/images/code.png"
+                  alt=""
+                  width={50}
+                  height={50}
+                />
+                <h3>Program</h3>
+                <p>
+                  Creating dynamic and responsive websites using the latest web
+                  technologies. I ensure that your website is not only visually
+                  appealing but also functional and user-friendly.
+                  <span className="typing-cursor">|</span>
+                </p>
+                <div className="iconcontainer">
+                  <img
+                    className="icon"
+                    src="/images/Html.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/Css.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/Js.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/C.png"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/git.png"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/node.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/react.png"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="Design" className={`tabcontent${activeTab === "Design" ? " active" : ""}`}>
+            <div className="card">
+              <div className="service-content">
+                <Image
+                  className="icon"
+                  src="/images/design.png"
+                  alt=""
+                  width={50}
+                  height={50}
+                />
+                <h3>Design</h3>
+                <p>
+                  Crafting visually stunning designs for various media,
+                  including graphic design, video production, and motion
+                  graphics. I have a strong foundation in the Adobe Creative
+                  Suite and have worked with clients in the entertainment,
+                  fashion, and tech industries.
+                  <span className="typing-cursor">|</span>
+                </p>
+                <div className="iconcontainer">
+                  <Image
+                    className="icon"
+                    src="/images/Figma.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/photoshop.png"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/illustrator.png"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                  <Image
+                    className="icon"
+                    src="/images/aftereffects.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         <div>
           <h2>Skills & Expertise</h2>
