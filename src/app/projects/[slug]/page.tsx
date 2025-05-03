@@ -7,7 +7,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  images: string[];
+  images?: string[];
   features: string[];
   demo: string;
   github: string;
@@ -38,18 +38,18 @@ const projects: Record<string, Project> = {
     github: "https://github.com/awsactivators/balance-of-power-game.git",
   },
   birdIP: {
+    videoUrl: "https://youtu.be/oj6NyqT32OA",
     title: "BirdIP",
     description:
       "A comprehensive project for managing and exploring national parks information.",
     technologies: ["Html", "Css", "Js", "php", "mysql"],
-    images: ["/images/project3.svg"],
     features: [
       "Admin dashboard for park management",
       "User-friendly interface for park exploration",
       "Real-time data updates",
       "Interactive maps and guides",
     ],
-    demo: "https://demo-project1.com",
+    demo: "https://joycelin.infinityfreeapp.com/",
     github: "https://github.com/yourusername/project1",
   },
   nationalParks: {
@@ -130,14 +130,14 @@ export default function ProjectPage({ params }: PageProps) {
   return (
     <main className="project-container">
       <Link href="/" className="hyperlink">
-        ← Back to Projects
+        ← Back
       </Link>
 
       <div className="project-page-content">
         <h1>{project.title}</h1>
         <p>{project.description}</p>
 
-        {project.videoUrl && (
+        {project.videoUrl ? (
           <div className="video-container">
             <iframe
               className="responsive-iframe"
@@ -147,18 +147,20 @@ export default function ProjectPage({ params }: PageProps) {
               allowFullScreen
             />
           </div>
-        )}
-        <div>
-          {project.images.map((image, index) => (
-            <div key={index} className="relative h-64">
-              <img
-                src={image}
-                alt={`${project.title} screenshot ${index + 1}`}
-                className="project-image"
-              />
-            </div>
-          ))}
-        </div>
+        ) : project.images && project.images.length > 0 ? (
+          <div>
+            {project.images.map((image, index) => (
+              <div key={index} className="relative h-64">
+                <img
+                  src={image}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  className="project-image"
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
+
         <div className="features-container">
           <div>
             <h2>Technologies Used</h2>

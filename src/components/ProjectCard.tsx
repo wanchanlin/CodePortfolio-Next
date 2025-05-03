@@ -31,7 +31,7 @@ export default function ProjectCard({
         />
       </div>
       <div className="grid-item">
-        <div className="project-content">
+        <div>
           <p>{number}</p>
           <p className='project-title'>{title}</p>
           <p>{description}</p>
