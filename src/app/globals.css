@@ -509,4 +509,8 @@ iframe {
     flex-direction: column; /* Side-by-side on desktop */
     align-items: flex-start;
   }
+  .contact-social-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
