@@ -39,11 +39,7 @@ body {
   border: 0;
 }
 
-nav {
-  padding:  2rem ;
-  overflow: hidden;
-  transition: 250ms height ease-in-out;
-}
+
 
 nav a {
   color: var(--foreground);
@@ -52,6 +48,8 @@ nav a {
 }
 
 .navigation-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
