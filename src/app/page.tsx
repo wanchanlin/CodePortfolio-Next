@@ -13,7 +13,7 @@ const projects = [
   //   description:
   //     "A project admin can manage national park info and the users can view and save their",
   //   technologies: ["Html", "Css", "Js"],
-  //   imageSrc: "/images/project3.svg",
+  //   imageSrc: "/images/bof.svg",
   //   link: "/projects/powerOfBalance",
   // },
   {
