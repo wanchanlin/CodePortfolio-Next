@@ -41,7 +41,7 @@ export default function Navigation() {
             <Link href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>
               Projects
             </Link>
-            <Link href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>
+            <Link href="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
               Contact
             </Link>
             <Link href="https://wanchanlin.webflow.io/" target="_blank" className="nav-link" onClick={() => setMenuOpen(false)}>

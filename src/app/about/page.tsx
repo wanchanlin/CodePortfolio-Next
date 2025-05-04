@@ -8,8 +8,8 @@ export default function AboutPage() {
 
   return (
     <main>
-      <div>
-        <h1>About Me</h1>
+      <div className="project-container">
+       
         
         <div>
           <div>
