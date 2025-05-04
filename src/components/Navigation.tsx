@@ -37,9 +37,7 @@ export default function Navigation() {
             <Link href="/about" className="nav-link" onClick={() => setMenuOpen(false)}>
               About
             </Link>
-            <Link href="#services" className="nav-link" onClick={() => setMenuOpen(false)}>
-              Services
-            </Link>
+           
             <Link href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>
               Projects
             </Link>
