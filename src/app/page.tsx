@@ -11,9 +11,9 @@ const projects = [
     number: "01",
     title: "Balance of Power",
     description:
-      "A project admin can manage national park info and the users can view and save their",
+      "a series of cooperative audio storytelling games",
     technologies: ["Html", "Css", "Js"],
-    imageSrc: "/images/bof.svg",
+    imageSrc: "/images/pob.svg",
     link: "/projects/powerOfBalance",
   },
   {
