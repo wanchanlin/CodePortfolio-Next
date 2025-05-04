@@ -12,6 +12,7 @@ interface Project {
   demo: string;
   github: string;
   videoUrl?: string;
+  members?: { name: string; url: string }[];
 }
 
 // Define page props interface
@@ -36,6 +37,10 @@ const projects: Record<string, Project> = {
     ],
     demo: "https://balanceofpower.kvieve.com/",
     github: "https://github.com/awsactivators/balance-of-power-game.git",
+    members: [
+      { name: "Alice", url: "https://github.com/alice" },
+      { name: "Bob", url: "https://linkedin.com/in/bob" }
+    ],
   },
   birdIP: {
     videoUrl: "https://youtu.be/oj6NyqT32OA",
@@ -50,13 +55,13 @@ const projects: Record<string, Project> = {
       "Interactive maps and guides",
     ],
     demo: "https://joycelin.infinityfreeapp.com/",
-    github: "https://github.com/yourusername/project1",
+    github: "https://github.com/wanchanlin/BirdIP",
   },
   nationalParks: {
-    videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID", // Optional
+    videoUrl: "https://youtu.be/mLvPdRS_Bp8", // Optional
     title: "National Parks Project",
     description:
-      "A comprehensive project for managing and exploring national parks information.",
+      "A comprehensive project for managing and exploring national parks information. they can view and save their information. and the admin can manage the information.",
     technologies: ["Html", "Css", "Js", "php", "mysql"],
     images: ["/images/project3.svg"],
     features: [
@@ -184,6 +189,22 @@ export default function ProjectPage({ params }: PageProps) {
               {project.features.map((feature, index) => (
                 <li key={index}>{feature}</li>
               ))}
+            </ul>
+          </div>
+          <div>
+            <h2>Member</h2>
+            <ul>
+              {project.members && project.members.length > 0 ? (
+                project.members.map((member, idx) => (
+                  <div key={idx}>
+                    <a href={member.url} target="_blank" rel="noopener noreferrer">
+                      {member.name}
+                    </a>
+                  </div>
+                ))
+              ) : (
+                <li>No members listed.</li>
+              )}
             </ul>
           </div>
         </div>
