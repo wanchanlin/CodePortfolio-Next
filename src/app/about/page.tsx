@@ -9,37 +9,39 @@ export default function AboutPage() {
   return (
     <main>
       <div className="project-container">
-       
-        
-        <div>
+        <section className="grid-container">
           <div>
-            <h2>Professional Journey</h2>
+            
             <p>
-              With over 9 years of experience in the technology industry, I've developed a unique blend of skills
-              in both design and development. My journey began with a passion for creating beautiful and functional
-              digital experiences.
+              With over 9 years of experience in the technology industry, I've
+              developed a unique blend of skills in both design and development.
+              My journey began with a passion for creating beautiful and
+              functional digital experiences.
             </p>
             <p>
-              Throughout my career, I've worked with clients across various industries, including entertainment,
-              fashion, and technology. This diverse experience has allowed me to develop a versatile skill set
+              Throughout my career, I've worked with clients across various
+              industries, including entertainment, fashion, and technology. This
+              diverse experience has allowed me to develop a versatile skill set
               and a deep understanding of different market needs.
             </p>
           </div>
-          
+      
           <div>
             <img
               src="/images/profile.jpg"
               alt="Professional photo"
-              
               className="object-cover rounded-lg"
             />
           </div>
-        </div>
-        
+        </section>
+
         <section>
           <h2 id="services">{`{ SERVICES }`}</h2>
           <div className="tabs">
-            <button className="tablinks" onClick={() => setActiveTab("Program")}>
+            <button
+              className="tablinks"
+              onClick={() => setActiveTab("Program")}
+            >
               Program
             </button>
             <button className="tablinks" onClick={() => setActiveTab("Design")}>
@@ -47,7 +49,10 @@ export default function AboutPage() {
             </button>
           </div>
 
-          <div id="Program" className={`tabcontent${activeTab === "Program" ? " active" : ""}`}>
+          <div
+            id="Program"
+            className={`tabcontent${activeTab === "Program" ? " active" : ""}`}
+          >
             <div className="card">
               <div className="service-content">
                 <Image
@@ -64,6 +69,13 @@ export default function AboutPage() {
                   appealing but also functional and user-friendly.
                   <span className="typing-cursor">|</span>
                 </p>
+                <ul>
+                  <li>Full-Stack Development (HTML, CSS, JavaScript)</li>
+                  <li>React & Next.js</li>
+                  <li>Node.js & Express</li>
+                  <li>Database Management</li>
+                  <li>API Integration</li>
+                </ul>
                 <div className="iconcontainer">
                   <img
                     className="icon"
@@ -119,7 +131,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div id="Design" className={`tabcontent${activeTab === "Design" ? " active" : ""}`}>
+          <div
+            id="Design"
+            className={`tabcontent${activeTab === "Design" ? " active" : ""}`}
+          >
             <div className="card">
               <div className="service-content">
                 <Image
@@ -138,6 +153,13 @@ export default function AboutPage() {
                   fashion, and tech industries.
                   <span className="typing-cursor">|</span>
                 </p>
+                <ul>
+                  <li>UI/UX Design</li>
+                  <li>Graphic Design</li>
+                  <li>Motion Graphics</li>
+                  <li>Video Production</li>
+                  <li>Adobe Creative Suite</li>
+                </ul>
                 <div className="iconcontainer">
                   <Image
                     className="icon"
@@ -173,48 +195,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-
         <div>
-          <h2>Skills & Expertise</h2>
-          <div>
-            <div>
-              <h3>Development</h3>
-              <ul>
-                <li>Full-Stack Development (HTML, CSS, JavaScript)</li>
-                <li>React & Next.js</li>
-                <li>Node.js & Express</li>
-                <li>Database Management</li>
-                <li>API Integration</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Design</h3>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Graphic Design</li>
-                <li>Motion Graphics</li>
-                <li>Video Production</li>
-                <li>Adobe Creative Suite</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+          <h2>Education</h2>
+          <div className="grid-container">
+          
+              <div>
+                <h3>Bachelor's Degree in Industrial Design</h3>
+                <p>OCAD University</p>
+              </div>
 
-        <div>
-          <h2>Education & Certifications</h2>
-          <div>
-            <div>
-              <h3>Bachelor's Degree in Industrial Design</h3>
-              <p>OCAD University</p>
-            </div>
+              <div>
+                <h3>Web Development Postgraduate Certificate</h3>
+                <p>Humber College</p>
+              </div>
             
-            <div>
-              <h3>Web Development Postgraduate Certificate</h3>
-              <p>Humber College</p>
-            </div>
           </div>
         </div>
       </div>
     </main>
-  )
-} 
+  );
+}

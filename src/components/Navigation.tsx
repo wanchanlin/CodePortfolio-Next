@@ -38,7 +38,7 @@ export default function Navigation() {
               About
             </Link>
            
-            <Link href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>
+            <Link href="../#projects" className="nav-link" onClick={() => setMenuOpen(false)}>
               Projects
             </Link>
             <Link href="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
