@@ -60,8 +60,8 @@ export default function ContactForm() {
           </a>
         </div>
       </div>
-      <div className="contact-form-container">
-        <form onSubmit={handleSubmit}>
+      <div>
+        <form onSubmit={handleSubmit} className="contact-form-container">
           <div>
             <label htmlFor="name">Name</label> <br />
             <input
