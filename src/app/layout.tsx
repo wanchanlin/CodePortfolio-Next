@@ -11,8 +11,12 @@ import { ThemeProvider } from '../components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
+  title: 'Wanchan Website',
   description: 'Full-stack developer and designer portfolio',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  
 }
 
 export default function RootLayout({

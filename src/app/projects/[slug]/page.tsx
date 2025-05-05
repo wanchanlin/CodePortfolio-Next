@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+// import ContactForm from "../../../components/ContactForm";
 
 interface Project {
   title: string;
@@ -26,9 +27,9 @@ const projects: Record<string, Project> = {
   powerOfBalance: {
     title: "Power Of Balance",
     description:
-      "A comprehensive project for managing and exploring national parks information.",
+      "A series of cooperative audio storytelling games about cold war between US and Cuba",
     technologies: ["Html", "Css", "Js"],
-    images: ["/images/project3.svg"],
+    images: ["/images/pob.svg"],
     features: [
       "Admin dashboard for park management",
       "User-friendly interface for park exploration",
@@ -38,12 +39,14 @@ const projects: Record<string, Project> = {
     demo: "https://balanceofpower.kvieve.com/",
     github: "https://github.com/awsactivators/balance-of-power-game.git",
     members: [
-      { name: "Alice", url: "https://github.com/alice" },
-      { name: "Bob", url: "https://linkedin.com/in/bob" }
+      { name: "Heather", url: "https://github.com/alice" },
+      { name: "Gabi", url: "https://linkedin.com/in/bob" },
+      { name: "Ge", url: "https://linkedin.com/in/bob" },
+      { name: "Wanchan", url: "https://linkedin.com/in/bob" },
     ],
   },
   birdIP: {
-    videoUrl: "https://youtu.be/oj6NyqT32OA",
+    videoUrl: "https://www.youtube.com/embed/oj6NyqT32OA",
     title: "BirdIP",
     description:
       "A comprehensive project for managing and exploring national parks information.",
@@ -102,6 +105,10 @@ const projects: Record<string, Project> = {
     ],
     demo: "https://demo-project1.com",
     github: "https://github.com/wanchanlin/AnimationProject",
+    members: [
+      { name: "MySelf", url: "https://github.com/wanchanlin" }
+      
+    ],
   },
 };
 
@@ -137,100 +144,111 @@ export default function ProjectPage({ params }: PageProps) {
       <Link href="/" className="hyperlink">
         ← Back
       </Link>
+      <h1>{project.title}</h1>
+      <div className="grid-container">
+        <div>
+          <div className="project-page-content">
+            <p>{project.description}</p>
 
-      <div className="project-page-content">
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
-
-        {project.videoUrl ? (
-          <div className="video-container">
-            <iframe
-              className="responsive-iframe"
-              src={project.videoUrl}
-              title="Project Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        ) : project.images && project.images.length > 0 ? (
-          <div>
-            {project.images.map((image, index) => (
-              <div key={index} className="relative h-64">
-                <img
-                  src={image}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  className="project-image"
+            {project.videoUrl ? (
+              <div className="video-container">
+                <iframe
+                  className="responsive-iframe"
+                  src={project.videoUrl}
+                  title="Project Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
-            ))}
-          </div>
-        ) : null}
+            ) : project.images && project.images.length > 0 ? (
+              <div>
+                {project.images.map((image, index) => (
+                  <div key={index} className="relative h-64">
+                    <img
+                      src={image}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      className="project-image"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
 
-        <div className="features-container">
-          <div>
-            <h2>Technologies Used</h2>
-            <div className="technologies-container">
-              {project.technologies.map((tech, index) => (
-                <div key={index}>
-                  <Image
-                    src={`/images/${tech}.svg`}
-                    alt={tech}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-              ))}
+            <div className="project-links">
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  GitHub
+                </Link>
+              )}
+              {project.demo && (
+                <Link
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  Live Demo
+                </Link>
+              )}
             </div>
           </div>
+        </div>
+        <div className="features-container">
+            <div>
+              <h2>Technologies Used</h2>
+              <div className="technologies-container">
+                {project.technologies.map((tech, index) => (
+                  <div key={index}>
+                    <Image
+                      src={`/images/${tech}.svg`}
+                      alt={tech}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
 
-          <div>
-            <h2>Features</h2>
-            <ul>
-              {project.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2>Member</h2>
-            <ul>
-              {project.members && project.members.length > 0 ? (
-                project.members.map((member, idx) => (
-                  <div key={idx}>
-                    <a href={member.url} target="_blank" rel="noopener noreferrer">
+            <div>
+              <h2>Features</h2>
+              <ul>
+                {project.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2>Member</h2>
+              <div className="member-list">
+                {project.members && project.members.length > 0 ? (
+                  project.members.map((member, idx) => (
+                    <a
+                      key={idx}
+                      href={member.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="member-btn"
+                    >
                       {member.name}
                     </a>
-                  </div>
-                ))
-              ) : (
-                <li>No members listed.</li>
-              )}
-            </ul>
-          </div>
-        </div>
-        <div className="project-links">
-          {project.github && (
-            <Link
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn"
-            >
-              GitHub
-            </Link>
-          )}
-          {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn"
-            >
-              Live Demo
-            </Link>
-          )}
+                  ))
+                ) : (
+                  <span>No members listed.</span>
+                )}
+              </div>
+            </div>
         </div>
       </div>
+      {/* <div>
+        <ContactForm />
+      </div> */}
     </main>
   );
 }
