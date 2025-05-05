@@ -178,9 +178,9 @@ export default function AboutPage() {
           <h2>Skills & Expertise</h2>
           <div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">Development</h3>
-              <ul className="list-disc pl-6">
-                <li>Frontend Development (HTML, CSS, JavaScript)</li>
+              <h3>Development</h3>
+              <ul>
+                <li>Full-Stack Development (HTML, CSS, JavaScript)</li>
                 <li>React & Next.js</li>
                 <li>Node.js & Express</li>
                 <li>Database Management</li>
@@ -204,13 +204,13 @@ export default function AboutPage() {
           <h2>Education & Certifications</h2>
           <div>
             <div>
-              <h3>Bachelor's Degree in Computer Science</h3>
-              <p>University Name, Year</p>
+              <h3>Bachelor's Degree in Industrial Design</h3>
+              <p>OCAD University</p>
             </div>
             
             <div>
               <h3>Web Development Postgraduate Certificate</h3>
-              <p>Humber College, 2025</p>
+              <p>Humber College</p>
             </div>
           </div>
         </div>
