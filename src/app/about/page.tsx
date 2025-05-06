@@ -69,12 +69,12 @@ export default function AboutPage() {
                   appealing but also functional and user-friendly.
                   <span className="typing-cursor">|</span>
                 </p>
-                <ul>
-                  <li>Full-Stack Development (HTML, CSS, JavaScript)</li>
-                  <li>React & Next.js</li>
-                  <li>Node.js & Express</li>
-                  <li>Database Management</li>
-                  <li>API Integration</li>
+                <ul className="pill-list">
+                  <li className="pill">Full-Stack Development (HTML, CSS, JavaScript)</li>
+                  <li className="pill">React & Next.js</li>
+                  <li className="pill">Node.js & Express</li>
+                  <li className="pill">Database Management</li>
+                  <li className="pill">API Integration</li>
                 </ul>
                 <div className="iconcontainer">
                   <img
@@ -153,12 +153,12 @@ export default function AboutPage() {
                   fashion, and tech industries.
                   <span className="typing-cursor">|</span>
                 </p>
-                <ul>
-                  <li>UI/UX Design</li>
-                  <li>Graphic Design</li>
-                  <li>Motion Graphics</li>
-                  <li>Video Production</li>
-                  <li>Adobe Creative Suite</li>
+                <ul className="pill-list">
+                  <li className="pill">UI/UX Design</li>
+                  <li className="pill">Graphic Design</li>
+                  <li className="pill">Motion Graphics</li>
+                  <li className="pill">Video Production</li>
+                  <li className="pill">Adobe Creative Suite</li>
                 </ul>
                 <div className="iconcontainer">
                   <Image
