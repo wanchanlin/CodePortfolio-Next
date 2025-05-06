@@ -586,4 +586,9 @@ member-list {
   .features-container {
     border: 0;
   }
+  .back-arrow{
+    top: 0px;
+    
+
+  }
 }
