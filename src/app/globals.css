@@ -322,18 +322,27 @@ input, textarea {
   align-items: flex-start;
 }
 
+
 .project-header {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: baseline; */
+  align-items: center;
+  justify-content: center;
   position: relative;
   
 }
 
 .back-arrow {
+  position: absolute;
+  left: 0;
+  top: 16px;
   color: var(--foreground);
- padding: 0 1rem 5rem 0;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 1rem;
+ 
 }
+
+
 
 
 .navigation {
@@ -561,36 +570,20 @@ member-list {
   }
  
   .contact-social-wrapper {
-
     flex-direction: column;
     align-items: center;
   }
+  input, textarea {
+    width: 96%;
+  }
+}
+.member-btn:hover {
+  background-color: #67e242;
+  color: #fff;
 }
 
-.project-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.back-arrow {
-  position: absolute;
-  left: 0;
-  color: var(--foreground, #353535);
-  font-size: 1.5rem;
-  text-decoration: none;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.project-title {
-  margin: 0 auto;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
+@media (max-width: 500px) {
+  .features-container {
+    border: 0;
+  }
 }
