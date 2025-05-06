@@ -131,14 +131,14 @@ export default function Home() {
                 />
               </Link>
               <Link
-                href="https://wanchanlin.webflow.io/work/hongmall"
+                href="https://wanchanlin.webflow.io/work/spaceship"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   className="companylogo"
                   src="/images/spaceship.svg"
-                  alt="XingMobility"
+                  alt="SpaceshipHK"
                 />
               </Link>
               <Link

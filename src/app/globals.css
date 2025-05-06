@@ -463,8 +463,8 @@ input, textarea {
   color:var(--button);
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
+
+
   .mobile-menu-button {
     display: none;
   }
@@ -482,7 +482,7 @@ input, textarea {
   .navigation-menu .nav-link {
     padding: 0;
   }
-}
+
 /* project-page */
 .project-container{
   max-width: 1000px;
