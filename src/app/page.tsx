@@ -92,21 +92,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
-          <h2 id="about">{`{ PROFILE }`}</h2>
-          <p>
-            As a full-stack designer/developer with over 9 years of experience
-            in the technology industry, I specialize in creating visually
-            stunning designs for various media, including graphic design, video
-            production, and motion graphics. I have a strong foundation in the
-            Adobe Creative Suite and have worked with clients in the
-            entertainment, fashion, and tech industries. I am constantly seeking
-            to improve my skills and stay up-to-date on the latest design
-            trends. If you have a project that could benefit from my expertise,
-            please don't hesitate to reach out.
-            <span className="typing-cursor">|</span>
-          </p>
-        </section>
+        
 
         <h2 id="projects">{`{ PROJECTS }`}</h2>
         <div className="grid-container">

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-
+import ContactForm from "../../components/ContactForm";
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("Program");
 
@@ -11,26 +11,26 @@ export default function AboutPage() {
       <div className="project-container">
         <section className="grid-container">
           <div>
-            
-            <p>
-              With over 9 years of experience in the technology industry, I've
-              developed a unique blend of skills in both design and development.
-              My journey began with a passion for creating beautiful and
-              functional digital experiences.
-            </p>
-            <p>
-              Throughout my career, I've worked with clients across various
-              industries, including entertainment, fashion, and technology. This
-              diverse experience has allowed me to develop a versatile skill set
-              and a deep understanding of different market needs.
-            </p>
+            <section>
+              <p>
+              With 9+ years at the crossroads of design and development, I create engaging digital experiences that blend creativity and function. From graphic design and motion graphics to web development, I’ve worked across entertainment, fashion, and tech—adapting to diverse creative needs. Proficient in Adobe Creative Suite and driven by evolving trends, I bring ideas to life through impactful visual storytelling.
+                <span className="typing-cursor">|</span>
+              </p>
+              <a
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1m5Zy2mz5g-fkOUsSy4ZigErFfSVLciCl/view?usp=sharing"
+              >
+                Resume
+              </a>
+            </section>
           </div>
-      
           <div>
             <img
               src="/images/profile.jpg"
               alt="Professional photo"
-              className="object-cover rounded-lg"
+              className="profile-image"
             />
           </div>
         </section>
@@ -195,22 +195,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <div>
+        {/* <div>
           <h2>Education</h2>
           <div className="grid-container">
-          
-              <div>
-                <h3>Bachelor's Degree in Industrial Design</h3>
-                <p>OCAD University</p>
-              </div>
-
-              <div>
-                <h3>Web Development Postgraduate Certificate</h3>
-                <p>Humber College</p>
-              </div>
-            
+            <div>
+              <h3>Bachelor's Degree in Industrial Design</h3>
+              <p>OCAD University</p>
+            </div>
+            <div>
+              <h3>Web Development Postgraduate Certificate</h3>
+              <p>Humber College</p>
+            </div>
           </div>
-        </div>
+        </div> */}
+        <br />
+        <br />
+        <h2> Contact Me </h2>
+        <ContactForm />
       </div>
     </main>
   );
