@@ -60,7 +60,7 @@ export default function ContactForm() {
           </a>
         </div>
       </div>
-      <div>
+      
         <form onSubmit={handleSubmit} className="contact-form-container">
           <div>
             <label htmlFor="name">Name</label> <br />
@@ -101,7 +101,7 @@ export default function ContactForm() {
             Send Message
           </button>
         </form>
-      </div>
+      
     </div>
   );
 }

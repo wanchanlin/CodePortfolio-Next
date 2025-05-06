@@ -18,7 +18,7 @@ export default function Navigation() {
           <Link href="/" className="navigation-logo">
             <img src="/images/logo.svg" alt="logo" className="logo-img" />
           </Link>
-
+    <div className="navigation-menu-wrapper">
           {/* Hamburger Menu Button */}
           <button 
             className="mobile-menu-button md:hidden"
@@ -50,6 +50,7 @@ export default function Navigation() {
           </div>
 
           <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>
