@@ -29,13 +29,13 @@ const projects: Record<string, Project> = {
   powerOfBalance: {
     title: "Power Of Balance",
     description:
-      "A series of cooperative audio storytelling games about cold war between US and Cuba",
+      "An immersive series of cooperative audio storytelling games set during the Cold War between the United States and Cuba. \nPlayers work together to uncover secrets, navigate political tension, and make impactful decisions through rich audio-driven narratives.",
     technologies: ["Html", "Css", "Js"],
     images: ["/images/pob.svg"],
     features: [
-      "Admin dashboard for park management",
-      "User-friendly interface for park exploration",
-      "Real-time data updates",
+      "Cooperative Gameplay: Collaborate with others to shape the story’s outcome.",
+      "Audio-Driven Storytelling: Experience the Cold War through atmospheric sound design and voice-acted scenes",
+      "Historical Immersion: Engage with real events and fictionalized scenarios inspired by the US–Cuba conflict.",
       "Interactive maps and guides",
     ],
     demo: "https://balanceofpower.kvieve.com/",
