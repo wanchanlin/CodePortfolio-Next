@@ -186,6 +186,7 @@ footer a {
 
 .btn {
   display: inline-block;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   background-color: var(--button);
   color: var(--foreground);

@@ -88,7 +88,7 @@ const projects: Record<string, Project> = {
     description:
       "Compare weather conditions between Earth and Mars using real-time data.",
     technologies: ["pug", "Css", "node", "Js"],
-    images: ["/images/project2.svg"],
+    images: ["/images/evm.svg"],
     features: [
       "Real-time weather data comparison",
       "Interactive visualizations",
@@ -99,20 +99,20 @@ const projects: Record<string, Project> = {
     github: "https://github.com/wanchanlin/MarsVSEarth",
   },
   birdanimation: {
-    title: "Animation Project",
+    title: "Animation",
     description:
       "A creative animation project showcasing various bird species.",
     technologies: ["Html", "Css", "Js"],
     images: ["/images/project1.svg"],
     features: [
       "Interactive animations",
-      "Responsive design",
+      "Not Responsive",
       "Smooth transitions",
       "Cross-browser compatibility",
     ],
     demo: "https://animation-project-lemon.vercel.app/",
     github: "https://github.com/wanchanlin/AnimationProject",
-    members: [{ name: "MySelf", url: "https://github.com/wanchanlin" }],
+ 
   },
 };
 
