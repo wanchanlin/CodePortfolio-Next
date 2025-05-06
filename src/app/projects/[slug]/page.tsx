@@ -61,7 +61,7 @@ const projects: Record<string, Project> = {
     github: "https://github.com/wanchanlin/BirdIP",
   },
   nationalParks: {
-    videoUrl: "https://youtu.be/mLvPdRS_Bp8", // Optional
+    videoUrl: "https://www.youtube.com/embed/mLvPdRS_Bp8", // Optional
     title: "National Parks Project",
     description:
       "A comprehensive project for managing and exploring national parks information. they can view and save their information. and the admin can manage the information.",
