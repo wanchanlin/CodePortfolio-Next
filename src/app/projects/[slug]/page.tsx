@@ -2,6 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 // import ContactForm from "../../../components/ContactForm";
 
 interface Project {
@@ -39,23 +41,23 @@ const projects: Record<string, Project> = {
     demo: "https://balanceofpower.kvieve.com/",
     github: "https://github.com/awsactivators/balance-of-power-game.git",
     members: [
-      { name: "Heather", url: "https://github.com/alice" },
-      { name: "Gabi", url: "https://linkedin.com/in/bob" },
-      { name: "Ge", url: "https://linkedin.com/in/bob" },
-      { name: "Wanchan", url: "https://linkedin.com/in/bob" },
+      { name: "Heather", url: "https://github.com/heatherfeather-code" },
+      { name: "Gabi", url: "https://github.com/gabi-studio" },
+      { name: "Genevieve", url: "https://github.com/awsactivators" },
+      { name: "Wanchan", url: "https://github.com/wanchanlin" },
     ],
   },
   birdIP: {
     videoUrl: "https://www.youtube.com/embed/oj6NyqT32OA",
     title: "BirdIP",
     description:
-      "A comprehensive project for managing and exploring national parks information.",
-    technologies: ["Html", "Css", "Js", "php", "mysql"],
+      "Your IP address is used to identify local bird species in your area. By clicking the More button, you can view a ranked list of recently sighted birds nearby, along with their observed locations. For each bird species, you’ll also have the option to access more detailed information by following a link to its Wikipedia page.",
+    technologies: ["Html", "Css", "Js", "php", "api"],
     features: [
-      "Admin dashboard for park management",
-      "User-friendly interface for park exploration",
-      "Real-time data updates",
-      "Interactive maps and guides",
+      "A ranked list of recently sighted birds in your region",
+      "The locations where these birds were last observed",
+      "Detailed information about each species, with a link to their Wikipedia page for more in-depth reading",
+
     ],
     demo: "https://joycelin.infinityfreeapp.com/",
     github: "https://github.com/wanchanlin/BirdIP",
@@ -64,7 +66,7 @@ const projects: Record<string, Project> = {
     videoUrl: "https://www.youtube.com/embed/mLvPdRS_Bp8", // Optional
     title: "National Parks Project",
     description:
-      "A comprehensive project for managing and exploring national parks information. they can view and save their information. and the admin can manage the information.",
+      "A comprehensive project for managing and exploring national parks information.they can view and save their information.\nand the admin can manage the information.\n\nAdmin \nUsername: admin@example.com \nPassword:test\n\nUser \nUsername: henry.clark@example.com \nPassword:test",
     technologies: ["Html", "Css", "Js", "php", "mysql"],
     images: ["/images/project3.svg"],
     features: [
@@ -75,6 +77,11 @@ const projects: Record<string, Project> = {
     ],
     demo: "https://lavender-dolphin-454296.hostingersite.com/index.php",
     github: "https://github.com/wanchanlin/national-parks-ecology",
+    members: [
+      { name: "Gabi", url: "https://github.com/gabi-studio" },
+      { name: "Tashrif", url: "https://github.com/Ramdao" },
+      { name: "Wanchan", url: "https://github.com/wanchanlin" },
+    ],
   },
   weather: {
     title: "Earth V.S. Mars Weather",
@@ -88,8 +95,8 @@ const projects: Record<string, Project> = {
       "Historical data analysis",
       "API integration",
     ],
-    demo: "https://animation-project-lemon.vercel.app/",
-    github: "https://github.com/yourusername/project1",
+    demo: "https://weather-mars-earth.vercel.app/",
+    github: "https://github.com/wanchanlin/MarsVSEarth",
   },
   birdanimation: {
     title: "Animation Project",
@@ -103,12 +110,9 @@ const projects: Record<string, Project> = {
       "Smooth transitions",
       "Cross-browser compatibility",
     ],
-    demo: "https://demo-project1.com",
+    demo: "https://animation-project-lemon.vercel.app/",
     github: "https://github.com/wanchanlin/AnimationProject",
-    members: [
-      { name: "MySelf", url: "https://github.com/wanchanlin" }
-      
-    ],
+    members: [{ name: "MySelf", url: "https://github.com/wanchanlin" }],
   },
 };
 
@@ -128,10 +132,10 @@ export default function ProjectPage({ params }: PageProps) {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div >
         <div>
           <h1>Project Not Found</h1>
-          <Link href="/" className="text-blue-500 hover:underline">
+          <Link href="/" >
             Return to Home
           </Link>
         </div>
@@ -141,14 +145,16 @@ export default function ProjectPage({ params }: PageProps) {
 
   return (
     <main className="project-container">
-      <Link href="/" className="hyperlink">
-        ← Back
-      </Link>
-      <h1>{project.title}</h1>
+      <div className="project-header">
+        <Link href="/" className="hyperlink">
+          <FontAwesomeIcon icon={faChevronLeft} className="back-arrow"/>
+        </Link>
+        <h1>{project.title}</h1>
+      </div>
       <div className="grid-container">
         <div>
           <div className="project-page-content">
-            <p>{project.description}</p>
+            <p style={{ whiteSpace: "pre-line" }}>{project.description}</p>
 
             {project.videoUrl ? (
               <div className="video-container">
@@ -199,51 +205,49 @@ export default function ProjectPage({ params }: PageProps) {
           </div>
         </div>
         <div className="features-container">
-            <div>
-              <h2>Technologies Used</h2>
-              <div className="technologies-container">
-                {project.technologies.map((tech, index) => (
-                  <div key={index}>
-                    <Image
-                      src={`/images/${tech}.svg`}
-                      alt={tech}
-                      width={50}
-                      height={50}
-                    />
-                  </div>
-                ))}
-              </div>
+          <div>
+            <h2>Technologies Used</h2>
+            <div className="technologies-container">
+              {project.technologies.map((tech, index) => (
+                <div key={index}>
+                  <Image
+                    src={`/images/${tech}.svg`}
+                    alt={tech}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+              ))}
             </div>
+          </div>
 
-            <div>
-              <h2>Features</h2>
-              <ul>
-                {project.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            </div>
+          <div>
+            <h2>Features</h2>
+            <ul>
+              {project.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
 
+          {project.members && project.members.length > 0 && (
             <div>
               <h2>Member</h2>
               <div className="member-list">
-                {project.members && project.members.length > 0 ? (
-                  project.members.map((member, idx) => (
-                    <a
-                      key={idx}
-                      href={member.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="member-btn"
-                    >
-                      {member.name}
-                    </a>
-                  ))
-                ) : (
-                  <span>No members listed.</span>
-                )}
+                {project.members.map((member, idx) => (
+                  <a
+                    key={idx}
+                    href={member.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="member-btn"
+                  >
+                    {member.name}
+                  </a>
+                ))}
               </div>
             </div>
+          )}
         </div>
       </div>
       {/* <div>

@@ -20,7 +20,7 @@ const projects = [
     number: "02",
     title: "Bird IP",
     description:
-      "A project admin can manage national park info and the users can view and save their",
+      "Yours ip address indicates your local bird species",
     technologies: ["Html", "Css", "Js", "php"],
     imageSrc: "/images/birdip.svg",
     link: "/projects/birdIP",
