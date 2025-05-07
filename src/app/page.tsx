@@ -63,10 +63,10 @@ export default function Home() {
   return (
     <main>
       <div className="content">
-        <section>
+        <section className="hero">
           <div className="grid-container">
-            <div className="grid-item">
-              <div className="project-content text-white">
+            <div>
+              <div className="hero-text">
                 <span className="subtitle">Hi, I am joyce</span>
                 <br />
                 <span className="title">
@@ -81,7 +81,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="grid-item">
+            <div >
               <iframe
                 className="responsive-iframe"
                 src="https://my.spline.design/developwe-f3cc7a88c680ba4cf806a9340e3e9ede/"

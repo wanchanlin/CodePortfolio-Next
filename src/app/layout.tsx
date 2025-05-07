@@ -10,6 +10,7 @@ config.autoAddCss = false
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { ThemeProvider } from '../components/ThemeProvider'
+import GoogleAnalytics from '../components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           </div>
           <Footer />
         </ThemeProvider>
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-RSR0QVVBQJ" />
       </body>
     </html>
   )
