@@ -20,7 +20,28 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  
+  openGraph: {
+    title: 'Wanchan Website',
+    description: 'Full-stack developer and designer portfolio',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Wanchan Website Preview',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wanchan Website',
+    description: 'Full-stack developer and designer portfolio',
+    images: ['/twitter-image.jpg'],
+  },
+  other: {
+    'msapplication-TileImage': '/mstile-144x144.png',
+    'apple-touch-icon': '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({
