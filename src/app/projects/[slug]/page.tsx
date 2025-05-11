@@ -3,7 +3,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+// import { faUser, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 // import ContactForm from "../../../components/ContactForm";
 
 interface Project {
@@ -188,7 +191,7 @@ export default function ProjectPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="btn"
                 >
-                  GitHub
+                  GitHub <FontAwesomeIcon icon={faGithub}/>
                 </Link>
               )}
               {project.demo && (
