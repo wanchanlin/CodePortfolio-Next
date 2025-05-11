@@ -3,14 +3,17 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 interface ProjectCardProps {
-  number: string
-  title: string
-  description: string
-  technologies: string[]
-  imageSrc: string
-  link: string
+  number: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  imageSrc: string;
+  link: string;
+  date?: string;
 }
 
 export default function ProjectCard({
@@ -20,6 +23,7 @@ export default function ProjectCard({
   technologies,
   imageSrc,
   link,
+  date
 }: ProjectCardProps) {
   return (
     <>
@@ -32,7 +36,7 @@ export default function ProjectCard({
       </div>
       <div className="grid-item">
         <div>
-          <p>{number}</p>
+          <p> <span className="date"> {date} </span></p> 
           <p className='project-title'>{title}</p>
           <p>{description}</p>
           <div>
@@ -48,7 +52,7 @@ export default function ProjectCard({
           </div>
           <br />
           <Link href={link}>
-            <div className="btn">View more</div>
+            <div className="btn">View more <FontAwesomeIcon icon={faChevronRight} /></div>
           </Link>
         </div>
       </div>
