@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";  
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
 // import { faUser, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 // import ContactForm from "../../../components/ContactForm";
@@ -201,7 +202,7 @@ export default function ProjectPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="btn"
                 >
-                  Live Demo
+                  Live Demo <FontAwesomeIcon icon={faLaptopCode} />
                 </Link>
               )}
             </div>
