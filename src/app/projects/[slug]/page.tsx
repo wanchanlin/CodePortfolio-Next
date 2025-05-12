@@ -55,7 +55,7 @@ const projects: Record<string, Project> = {
     videoUrl: "https://www.youtube.com/embed/oj6NyqT32OA",
     title: "BirdIP",
     description:
-      "Your IP address is used to identify local bird species in your area. By clicking the More button, you can view a ranked list of recently sighted birds nearby, along with their observed locations. For each bird species, you’ll also have the option to access more detailed information by following a link to its Wikipedia page.",
+      "Your IP address is used to identify local bird species in your area. By clicking the More button, you can view a ranked list of recently sighted birds nearby, along with their observed locations. For each bird species, you’ll also have the option to access more detailed information by following a link to its Wikipedia page.n/The bird-sighting website integrates several APIs to offer a location-based, informative experience for users. \n\n Here’s a breakdown of each:\n 1. IP Geolocation API\n Purpose: Identify the user’s approximate location using their IP address.\n2. eBird API (Bird Observation Data)\nPurpose: Retrieve a ranked list of recently sighted bird species in the user’s region.\n3. Google Maps JavaScript API\nPurpose: Visualize bird sighting locations on an interactive map. ",
     technologies: ["Html", "Css", "Js", "php", "api"],
     features: [
       "A ranked list of recently sighted birds in your region",
@@ -158,7 +158,7 @@ export default function ProjectPage({ params }: PageProps) {
       <div className="grid-container">
         <div>
           <div className="project-page-content">
-            <p style={{ whiteSpace: "pre-line" }}>{project.description}</p>
+            
 
             {project.videoUrl ? (
               <div className="video-container">
@@ -206,11 +206,15 @@ export default function ProjectPage({ params }: PageProps) {
                 </Link>
               )}
             </div>
+           
           </div>
         </div>
         <div className="features-container">
+       
           <div>
-            <h2>Technologies Used</h2>
+          <h2>About</h2>
+          <p style={{ whiteSpace: "pre-line" }}>{project.description}</p>
+          <h2>Techonology</h2>
             <div className="technologies-container">
               {project.technologies.map((tech, index) => (
                 <div key={index}>
