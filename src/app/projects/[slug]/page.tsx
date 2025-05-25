@@ -78,6 +78,7 @@ const projects: Record<string, Project> = {
       "User-friendly interface for park exploration",
       "Real-time data updates",
       "Interactive maps and guides",
+      "CRUD operations",
     ],
     demo: "https://lavender-dolphin-454296.hostingersite.com/index.php",
     github: "https://github.com/wanchanlin/national-parks-ecology",
