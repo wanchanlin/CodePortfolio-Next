@@ -74,7 +74,7 @@ export default function Home() {
                 <br />
                 <span>Based in TW & CA</span>
                 <br />
-                <Link href="https://drive.google.com/file/d/1m5Zy2mz5g-fkOUsSy4ZigErFfSVLciCl/view?usp=sharing">
+                <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
                   <div className="btn">Resume</div>
                 </Link>
               </div>
