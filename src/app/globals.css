@@ -11,6 +11,20 @@
   --button: #c7ebbc;
 }
 
+/* button{
+
+    font-size: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--button);
+    color: var(--foreground);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 0;
+
+} */
 .dark {
   --foreground: #fff;
   --background: #262626;
@@ -232,7 +246,13 @@ justify-content: space-between;
   color: var(--foreground);
 }
 
-
+.chevron {
+  color: var(--foreground);
+  transition: color 0.2s ease;
+  &:hover {
+    color: var(--button);
+  }
+}
 /* Home page */
 .project-card {
   display: flex;
@@ -252,6 +272,7 @@ justify-content: space-between;
   border: 3px solid var(--button);
   padding: 0.25rem 0.5rem;
   border-radius: 4rem;
+  width: fit-content;
 }
 /* Image styles (optional) */
 .project-card img.project {

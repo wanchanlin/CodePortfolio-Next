@@ -1,0 +1,43 @@
+.projectCard {
+ 
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+ 
+ 
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.projectInfo {
+  flex: 1;
+}
+
+.projectImage {
+  @media (min-width: 768px) {
+    width: 33.333333%;
+  }
+}
+
+.projectImageImg {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.projectLink {
+  margin-top: 1rem;
+  @media (min-width: 768px) {
+    margin-top: 0;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+

@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import ContactForm from "../components/ContactForm";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+import "../app/tabs.css";
+
 
 const projects = [
   {
@@ -57,6 +60,18 @@ const projects = [
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Program");
+  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
+
+  const allTechnologies = [...new Set(projects.flatMap(project => project.technologies))];
+  const filteredProjects = selectedTechnologies.length > 0
+    ? projects.filter(project => 
+        project.technologies.some(tech => 
+          selectedTechnologies.some(selectedTech => 
+            tech.toLowerCase() === selectedTech.toLowerCase()
+          )
+        )
+      )
+    : projects;
 
   return (
     <main>
@@ -91,11 +106,67 @@ export default function Home() {
         </section>
 
         <h2 id="projects">{`{ PROJECTS }`}</h2>
-        <div className="grid-container">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+        <Tabs defaultValue="">
+          <TabsList className="tabsList">
+            <TabsTrigger 
+              value="" 
+              className="tabsTrigger"
+              data-state={selectedTechnologies.length === 0 ? 'active' : 'inactive'}
+            >
+              All
+              {selectedTechnologies.length > 0 && (
+                <>
+                  <span className="text-sm text-gray-500">
+                    ({selectedTechnologies.length})
+                  </span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedTechnologies([]);
+                    }}
+                    className="clearButton"
+                    title="Clear all filters"
+                  >
+                    ✕
+                  </button>
+                </>
+              )}
+            </TabsTrigger>
+            {allTechnologies.map((tech) => (
+              <TabsTrigger
+                key={tech}
+                value={tech}
+                onClick={() => {
+                  if (selectedTechnologies.includes(tech)) {
+                    setSelectedTechnologies(selectedTechnologies.filter(t => t !== tech));
+                  } else {
+                    setSelectedTechnologies([...selectedTechnologies, tech]);
+                  }
+                }}
+                className="tabsTrigger"
+                data-state={selectedTechnologies.includes(tech) ? 'active' : 'inactive'}
+              >
+                {tech}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          <TabsContent value="">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.number} {...project} />
+              ))}
+            </div>
+          </TabsContent>
+          {allTechnologies.map((tech) => (
+            <TabsContent key={tech} value={tech}>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {filteredProjects.map((project) => (
+                  <ProjectCard key={project.number} {...project} />
+                ))}
+              </div>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
 
         <h2>{`{ PARTNERS }`}</h2>
         <div className="crop">
