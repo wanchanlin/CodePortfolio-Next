@@ -11,6 +11,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { ThemeProvider } from '../components/ThemeProvider'
 import GoogleAnalytics from '../components/GoogleAnalytics'
+import { GA_MEASUREMENT_ID } from '../config'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -54,13 +55,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <Navigation />
-          <div className="pt-16">
+          <main className="pt-16">
             {children}
-          </div>
+          </main>
           <Footer />
+          <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
         </ThemeProvider>
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-RSR0QVVBQJ" />
       </body>
     </html>
   )
-} 
+}
