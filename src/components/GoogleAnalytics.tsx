@@ -1,6 +1,6 @@
 'use client';
 
-import { GoogleAnalytics as GA } from '@next/third-parties/google';
+import Script from 'next/script';
 
 export default function GoogleAnalytics() {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -10,5 +10,20 @@ export default function GoogleAnalytics() {
     return null;
   }
 
-  return <GA gaId={GA_MEASUREMENT_ID} />;
+  return (
+    <>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
+    </>
+  );
 }
