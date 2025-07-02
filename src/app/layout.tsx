@@ -59,7 +59,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
+          <GoogleAnalytics />
         </ThemeProvider>
       </body>
     </html>
