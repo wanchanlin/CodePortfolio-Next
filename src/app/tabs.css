@@ -5,12 +5,8 @@
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
     padding: 0.5rem;
-
     border-radius: 0.5rem;
     position: relative;
-}
-.clearButton{
-    
 }
 
 
@@ -49,5 +45,14 @@
   margin-left: 0.5rem;
   border: none;
 }
+@media screen and (max-width: 768px) {
+  .tabsList{
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
 
-
+@media screen and (max-width: 414px) {
+  .tabsList{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
