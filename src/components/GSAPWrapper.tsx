@@ -26,7 +26,7 @@ export default function GSAPWrapper({ children, className = '' }: GSAPWrapperPro
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: hero,
-          start: 'top 80%',
+          start: 'top 100%',
           end: 'bottom top',
           toggleActions: 'play none none none',
           // markers: true, // Uncomment for debugging
@@ -39,7 +39,7 @@ export default function GSAPWrapper({ children, className = '' }: GSAPWrapperPro
       if (textLines.length > 0) {
         // If text is split into lines with 'line' class
         tl.from(textLines, {
-          y: 40,
+          y: 30,
           duration: 0.8,
           stagger: 0.1,
           ease: 'power3.out',
@@ -60,7 +60,7 @@ export default function GSAPWrapper({ children, className = '' }: GSAPWrapperPro
           trigger: hero,
           start: 'top center',
           end: 'bottom top',
-          scrub: 1,
+          scrub: 2,
           // markers: true, // Uncomment for debugging
         },
       });
@@ -80,7 +80,7 @@ export default function GSAPWrapper({ children, className = '' }: GSAPWrapperPro
           ease: 'power2.out',
           scrollTrigger: {
             trigger: card,
-            start: 'top 80%',
+            start: 'top 90%',
             toggleActions: 'play none none none', // Play once when it enters
             // markers: true, // Uncomment for debugging
           },
