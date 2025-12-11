@@ -30,6 +30,22 @@ interface PageProps {
 }
 
 const projects: Record<string, Project> = {
+  jencyLab: {
+    title: "Jency Lab",
+    description: "An e-commerce website for Skincare products.",    
+    technologies: ["Nextjs", "Tailwind", "Js", "Supabase"],
+    images: ["/images/pob.svg"],
+    features: [
+      "User-friendly interface for browsing and purchasing skincare products",
+      "Secure payment gateway integration",
+      "Personalized product recommendations based on user preferences",
+      "Inventory management system for real-time stock updates",
+    ],
+    demo: "https://jency-lab.example.com",
+    github: "https://github.com/awsactivators/jency-lab.git",
+      
+  },    
+    
   powerOfBalance: {
     title: "Power Of Balance",
     description:

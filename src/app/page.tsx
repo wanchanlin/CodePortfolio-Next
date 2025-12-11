@@ -13,9 +13,9 @@ const projects = [
     number: "01",
     title: "Jency Lab",
     description: "an e-commerce website for Skincare products",
-    technologies: ["Next", "Tailwind", "Js", "PageCms"],
+    technologies: ["Nextjs", "Tailwind", "Js", "Supabase"],
     imageSrc: "/images/pob.svg",
-    link: "/projects/powerOfBalance",
+    link: "/projects/jencyLab",
     date: "December 2025",
   },
 
