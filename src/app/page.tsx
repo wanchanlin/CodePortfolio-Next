@@ -11,6 +11,16 @@ import "../app/tabs.css";
 const projects = [
   {
     number: "01",
+    title: "Jency Lab",
+    description: "an e-commerce website for Skincare products",
+    technologies: ["Next", "Tailwind", "Js", "PageCms"],
+    imageSrc: "/images/pob.svg",
+    link: "/projects/powerOfBalance",
+    date: "December 2025",
+  },
+
+  {
+    number: "02",
     title: "Balance of Power",
     description: "A series of cooperative audio storytelling games",
     technologies: ["Html", "Css", "Js"],
