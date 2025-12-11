@@ -41,8 +41,8 @@ const projects: Record<string, Project> = {
       "Personalized product recommendations based on user preferences",
       "Inventory management system for real-time stock updates",
     ],
-    demo: "https://jency-lab.example.com",
-    github: "https://github.com/awsactivators/jency-lab.git",
+    demo: "https://jencylab.vercel.app/",
+    github: "https://github.com/wanchanlin/Jency-Lab.git",
       
   },    
     
