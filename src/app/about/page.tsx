@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import ContactForm from "../../components/ContactForm";
+import ContactForm from "../components/ContactForm";
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("Program");
 

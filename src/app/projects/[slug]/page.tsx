@@ -153,10 +153,10 @@ export default function ProjectPage({ params }: PageProps) {
 
   if (!project) {
     return (
-      <div >
+      <div className="max-w-[1000px] mx-auto mt-[100px] p-4">
         <div>
-          <h1>Project Not Found</h1>
-          <Link href="/" >
+          <h1 className="text-[#67e242] text-center">Project Not Found</h1>
+          <Link href="/" className="text-[var(--foreground)] font-semibold no-underline transition-colors duration-300 hover:text-[var(--button)]">
             Return to Home
           </Link>
         </div>
@@ -165,22 +165,22 @@ export default function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <main className="project-container">
-      <div className="project-header">
-        <Link href="/" className="hyperlink">
-          <FontAwesomeIcon icon={faChevronLeft} className="back-arrow"/>
+    <main className="max-w-[1000px] mt-[100px] mx-auto w-full">
+      <div className="flex items-center justify-center relative">
+        <Link href="/" className="absolute left-0 top-4 text-[var(--foreground)] text-2xl no-underline p-4 transition-colors duration-300 hover:text-[var(--button)]">
+          <FontAwesomeIcon icon={faChevronLeft} />
         </Link>
-        <h1>{project.title}</h1>
+        <h1 className="text-[#67e242] text-center">{project.title}</h1>
       </div>
-      <div className="grid-container">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
         <div>
-          <div className="project-page-content">
+          <div className="flex flex-col gap-8 text-center mx-auto">
             
 
             {project.videoUrl ? (
-              <div className="video-container">
+              <div className="relative w-full pb-[56.25%] my-8">
                 <iframe
-                  className="responsive-iframe"
+                  className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
                   src={project.videoUrl}
                   title="Project Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -194,20 +194,20 @@ export default function ProjectPage({ params }: PageProps) {
                     <img
                       src={image}
                       alt={`${project.title} screenshot ${index + 1}`}
-                      className="project-image"
+                      className="max-w-[500px] w-full h-full object-cover mx-auto"
                     />
                   </div>
                 ))}
               </div>
             ) : null}
 
-            <div className="project-links">
+            <div className="flex gap-4 justify-center">
               {project.github && (
                 <Link
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn"
+                  className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]"
                 >
                   GitHub <FontAwesomeIcon icon={faGithub}/>
                 </Link>
@@ -217,7 +217,7 @@ export default function ProjectPage({ params }: PageProps) {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn"
+                  className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]"
                 >
                   Live Demo <FontAwesomeIcon icon={faLaptopCode} />
                 </Link>
@@ -226,13 +226,13 @@ export default function ProjectPage({ params }: PageProps) {
            
           </div>
         </div>
-        <div className="features-container">
+        <div className="px-12 border-l-2 border-[var(--button)] flex flex-col gap-8 items-stretch justify-center max-md:border-0">
        
           <div>
-          <h2>About</h2>
-          <p style={{ whiteSpace: "pre-line" }}>{project.description}</p>
-          <h2>Techonology</h2>
-            <div className="technologies-container">
+          <h2 className="text-[#67e242] text-center">About</h2>
+          <p style={{ whiteSpace: "pre-line" }} className="text-left">{project.description}</p>
+          <h2 className="text-[#67e242] text-center">Techonology</h2>
+            <div className="flex flex-row gap-4 mt-4 justify-center">
               {project.technologies.map((tech, index) => (
                 <div key={index}>
                   <Image
@@ -247,8 +247,8 @@ export default function ProjectPage({ params }: PageProps) {
           </div>
 
           <div>
-            <h2>Features</h2>
-            <ul>
+            <h2 className="text-[#67e242] text-center">Features</h2>
+            <ul className="text-left">
               {project.features.map((feature, index) => (
                 <li key={index}>{feature}</li>
               ))}
@@ -257,15 +257,15 @@ export default function ProjectPage({ params }: PageProps) {
 
           {project.members && project.members.length > 0 && (
             <div>
-              <h2>Member</h2>
-              <div className="member-list">
+              <h2 className="text-[#67e242] text-center">Member</h2>
+              <div className="flex flex-wrap gap-4 mt-2">
                 {project.members.map((member, idx) => (
                   <a
                     key={idx}
                     href={member.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="member-btn"
+                    className="inline-block py-2 px-5 text-[var(--foreground)] border-0 rounded-lg font-medium transition-all duration-200 cursor-pointer hover:bg-[#67e242] hover:text-white"
                   >
                     {member.name}
                   </a>

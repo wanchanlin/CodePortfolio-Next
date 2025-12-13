@@ -7,10 +7,10 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 // import '~/css/style.css'
 
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
-import { ThemeProvider } from '../components/ThemeProvider'
-import GoogleAnalytics from '../components/GoogleAnalytics'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+import { ThemeProvider } from './components/ThemeProvider'
+import GoogleAnalytics from './components/GoogleAnalytics'
 import { GA_MEASUREMENT_ID } from '../config'
 
 const inter = Inter({ subsets: ['latin'] })
