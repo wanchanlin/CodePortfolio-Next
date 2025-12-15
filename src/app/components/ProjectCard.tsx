@@ -33,8 +33,8 @@ export default function ProjectCard({
           <p className='text-sm'>{date}</p>
           <p className='text-2xl font-bold'>{title}</p>
           <p className='text-sm text-[var(--foreground)] t'>{description}</p>
-          <Link href={link} className=" gap-2 text-base flex justify-left w-fit no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] items-center hover:bg-[var(--button)]">
-            VIEW MORE
+          <Link href={link} className=" gap-2 text-base flex justify-left w-fit no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] items-center rounded-md hover:bg-[var(--button)]">
+            View More
             <FontAwesomeIcon icon={faChevronRight} className="chevron" />
           </Link>
         </div>
