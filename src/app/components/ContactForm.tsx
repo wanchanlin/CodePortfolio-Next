@@ -60,7 +60,7 @@ export default function ContactForm() {
         </div>
       </div>
       
-        <form onSubmit={handleSubmit} className="w-1/2 flex flex-col gap-4 mx-auto max-md:w-full">
+        <form onSubmit={handleSubmit} className="w-1/2 flex flex-col gap-4 mx-auto max-md:w-full ">
           <div>
             <label htmlFor="name">Name</label> <br />
             <input
@@ -69,7 +69,7 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-[95%] p-2 border border-[var(--foreground)]"
+              className="w-[95%] p-2 border border-[var(--foreground)] rounded-md"
               required
             />
           </div>
@@ -82,7 +82,7 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-[95%] p-2 border border-[var(--foreground)]"
+              className="w-[95%] p-2 border border-[var(--foreground)] rounded-md"
               required
             />
           </div>
@@ -95,7 +95,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-[95%] p-2 border border-[var(--foreground)]"
+              className="w-[95%] p-2 border border-[var(--foreground)] rounded-md"
               required
             />
           </div>
