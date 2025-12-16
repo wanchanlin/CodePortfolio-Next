@@ -32,7 +32,7 @@ export default function ProjectCard({
     
       <div className='flex flex-col gap-4 md:grid md:grid-cols-2 items-center justify-center px-4 py-8'  >
         
-        <div className='flex flex-col gap-2 '>
+        <div className='flex flex-col gap-2'>
           <div>{number}</div>
           <p className='text-sm'>{date}</p>
           {/* <p className='text-2xl font-bold'>{title}</p> */}
