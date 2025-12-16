@@ -11,11 +11,12 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import { ThemeProvider } from './components/ThemeProvider'
 import GoogleAnalytics from './components/GoogleAnalytics'
-import { GA_MEASUREMENT_ID } from '../config'
+import { GA_MEASUREMENT_ID, SITE_URL } from '../config'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Wanchan Website',
   description: 'Full-stack developer and designer portfolio',
   icons: {
