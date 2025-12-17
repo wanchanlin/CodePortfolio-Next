@@ -88,9 +88,9 @@ export default function Home() {
   return (
     <GSAPWrapper>
       <main>
-        <div className="mt-[100px] max-w-[1000px] mx-auto px-4">
+        <div className=" max-w-[1000px] mx-auto px-4">
           
-          <section className="mt-[50px]">
+          <section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
               <div>
                 <div id="hero-text" className="mt-[100px] flex flex-col justify-between">

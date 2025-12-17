@@ -8,6 +8,7 @@ config.autoAddCss = false
 // import '~/css/style.css'
 
 import Navigation from './components/Navigation'
+import Navigation2 from './components/Navigation2'
 import Footer from './components/Footer'
 import { ThemeProvider } from './components/ThemeProvider'
 import GoogleAnalytics from './components/GoogleAnalytics'
@@ -55,7 +56,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <Navigation />
+          {/* <Navigation /> */}
+          <Navigation2 />
+
           <main className="pt-16">
             {children}
           </main>
