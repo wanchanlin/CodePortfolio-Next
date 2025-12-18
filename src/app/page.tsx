@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ProjectCard from "./components/ProjectCard";
 import ContactForm from "./components/ContactForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import GSAPWrapper from "./components/GSAPWrapper";
 import projectsData from "./data/project";
+import { gsap } from "gsap";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 const projects = [
   {
@@ -68,9 +70,15 @@ const projects = [
   },
 ];
 
-
 export default function Home() {
-
+  // register and run animation on mount
+  useEffect(() => {
+    gsap.registerPlugin(ScrambleTextPlugin);
+    gsap.to(".scramble", {
+      duration: 1,
+      scrambleText: { text: "I am a full-stack developer + designer." },
+    });
+  }, []);
 
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
 
@@ -96,12 +104,11 @@ export default function Home() {
                 <div id="hero-text" className="mt-[100px] flex flex-col justify-between">
                   <span className="text-[1.5rem] font-semibold text-[var(--foreground)]">Hi, I am Joyce</span>
                   <br />
-                  <span className="text-[2rem] font-semibold text-[var(--foreground)]">
-                    I am a full-stack developer + designer.{" "}
+                  <span className="scramble text-[2rem] font-semibold text-[var(--foreground)]">
+                   {" "}
                     <span className="animate-[blink_1s_step-end_infinite]">|</span>
                   </span>
                   <br />
-                  <span>Based in TW & CA</span>
                   <br />
                   <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
                     <div className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]">
