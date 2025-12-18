@@ -2,13 +2,15 @@
 
 import Script from 'next/script';
 
+// Read the public env var provided at build time
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 export default function GoogleAnalytics() {
-  const GA_MEASUREMENT_ID = 'G-N13R0R6VWZ'; // Hardcoded for now
-  
+  if (!GA_MEASUREMENT_ID) return null;
+
   return (
     <>
       <Script
-        async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
