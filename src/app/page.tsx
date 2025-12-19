@@ -10,6 +10,7 @@ import projectsData from "./data/project";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
+
 const projects = [
   {
     number: "01",

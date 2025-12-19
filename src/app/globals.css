@@ -211,7 +211,7 @@ body {
 /* Footer */
 
 
-
+/* 
 footer a {
   color: var(--foreground);
   text-decoration: none;
@@ -226,7 +226,7 @@ footer a {
   justify-content: space-between;
   align-items: center;
   background-color: var(--background);
-}
+} */
 /* hero */
 .hero{
  margin-top: 50px;
@@ -670,7 +670,7 @@ member-list {
 .pill:hover {
   background: #67e242;
   color: #fff;
-}
+/* }
 
 @media (max-width: 768px) {
   .footer-content{
@@ -681,7 +681,7 @@ member-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } */
  
   .contact-social-wrapper {
     flex-direction: column;
