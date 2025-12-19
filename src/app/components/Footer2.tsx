@@ -3,26 +3,40 @@
 import React from 'react'
 import Link from 'next/link'
 
+const FOOTER_LINKS = [
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Security', href: '/security' },
+]
+
 export default function Footer2() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer>
-      <div className= " my-8 flex items-center justify-between px-6 py-3 md:py-4 shadow-sm max-w-5xl rounded-full mx-auto w-full bg-white dark:bg-gray-800  dark:border-zinc-800 sticky top-4 z-50 md:justify-start gap-8 text-gray-400 dark:text-white text-sm "
-          >
-        <div>
-          <p >© 2025 Joyce's Portfolio. All rights reserved.</p>
+    <footer className="w-full px-4">
+      <div className="mx-auto my-8 flex max-w-5xl flex-col items-center justify-between gap-8 rounded-full bg-white px-12 py-3 shadow-sm dark:border-zinc-800 dark:bg-gray-800 md:flex-row md:justify-start md:py-4">
+        
+        {/* Copyright Section */}
+        <div className="text-gray-400 dark:text-white">
+          <p className="text-center text-sm">
+            © {currentYear} Joyce's Portfolio. All rights reserved.
+          </p>
         </div>
-        <div className="flex flex-col items-center md:flex-row">
-          <Link href="/privacy" className="dark:text-white text-sm no-underline md:ml-4">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="dark:text-white text-smno-underline md:ml-4">
-            Terms of Service
-          </Link>
-          <Link href="/security" className=" dark:text-white text-sm text-sm no-underline md:ml-4">
-            Security
-          </Link>
-        </div>
+
+        {/* Navigation Links */}
+        <nav className="flex flex-col items-center md:flex-row md:ml-auto">
+          {FOOTER_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-gray-400 no-underline transition-colors hover:text-gray-600 dark:text-white dark:hover:text-gray-300 md:ml-6"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+        
       </div>
     </footer>
   )
-} 
+}
