@@ -3,21 +3,28 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
+
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("Program");
 
   return (
-    <main>
+    <main className="max-w-5xl mx-auto px-4 py-12">
       <div className="project-container">
-        <section className="grid-container">
+        <section className="md:grid md:grid-cols-2 gap-8 items-center">
           <div>
             <section>
-              <p>
-              With 9+ years at the crossroads of design and development, I create engaging digital experiences that blend creativity and function. From graphic design and motion graphics to web development, I’ve worked across entertainment, fashion, and tech—adapting to diverse creative needs. Proficient in Adobe Creative Suite and driven by evolving trends, I bring ideas to life through impactful visual storytelling.
-                <span className="typing-cursor">|</span>
+              <p className="text-lg leading-relaxed text-gray-700">
+                With 9+ years at the crossroads of design and development, I
+                create engaging digital experiences that blend creativity and
+                function. From graphic design and motion graphics to web
+                development, I’ve worked across entertainment, fashion, and
+                tech—adapting to diverse creative needs. Proficient in Adobe
+                Creative Suite and driven by evolving trends, I bring ideas to
+                life through impactful visual storytelling.
+                <span className="text-[var(--button)] ml-1">|</span>
               </p>
               <a
-                className="btn"
+                className="inline-block mt-6 bg-[var(--button)] text-[var(--foreground)] px-4 py-2 rounded-md hover:bg-blue-700 transition"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://drive.google.com/file/d/1m5Zy2mz5g-fkOUsSy4ZigErFfSVLciCl/view?usp=sharing"
@@ -26,106 +33,90 @@ export default function AboutPage() {
               </a>
             </section>
           </div>
-          <div>
-            <img
+          <div className="flex justify-center md:justify-end">
+            <Image
               src="/images/profile.jpg"
               alt="Professional photo"
-              className="profile-image"
+              width={220}
+              height={220}
+              className="rounded-full object-cover"
             />
           </div>
         </section>
 
-        <section>
-          <h2 id="services">{`{ SERVICES }`}</h2>
-          <div className="tabs">
+        <section className="mt-12">
+          <h2 id="services" className="text-2xl font-semibold mb-4">
+            {`{ SERVICES }`}
+          </h2>
+
+          <div className="flex items-center mb-6">
             <button
-              className="tablinks"
+              className={`mr-2 px-4 py-2 rounded-md text-sm font-medium transition ${
+                activeTab === "Program"
+                  ? "bg-[var(--button)] text-[var(--foreground)]"
+                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              }`}
               onClick={() => setActiveTab("Program")}
             >
               Program
             </button>
-            <button className="tablinks" onClick={() => setActiveTab("Design")}>
+            <button
+              className={`px-4 py-2 rounded-md text-sm font-medium transition ${
+                activeTab === "Design"
+                  ? "bg-[var(--button)] text-[var(--foreground)]"
+                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveTab("Design")}
+            >
               Design
             </button>
           </div>
 
           <div
             id="Program"
-            className={`tabcontent${activeTab === "Program" ? " active" : ""}`}
+            className={`${activeTab === "Program" ? "block" : "hidden"}`}
           >
-            <div className="card">
+            <div className="bg-white shadow-md rounded-lg p-6">
               <div className="service-content">
                 <Image
-                  className="icon"
+                  className="mb-3"
                   src="/images/code.png"
                   alt=""
                   width={50}
                   height={50}
                 />
-                <h3>Program</h3>
-                <p>
+                <h3 className="text-xl font-semibold mb-2">Program</h3>
+                <p className="text-gray-700">
                   Creating dynamic and responsive websites using the latest web
                   technologies. I ensure that your website is not only visually
                   appealing but also functional and user-friendly.
-                  <span className="typing-cursor">|</span>
+                  <span className="text-blue-600 ml-1">|</span>
                 </p>
-                <ul className="pill-list">
-                  <li className="pill">Full-Stack Development (HTML, CSS, JavaScript)</li>
-                  <li className="pill">React & Next.js</li>
-                  <li className="pill">Node.js & Express</li>
-                  <li className="pill">Database Management</li>
-                  <li className="pill">API Integration</li>
+                <ul className="flex flex-wrap gap-2 mt-4">
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Full-Stack Development (HTML, CSS, JavaScript)
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    React & Next.js
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Node.js & Express
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Database Management
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    API Integration
+                  </li>
                 </ul>
-                <div className="iconcontainer">
-                  <img
-                    className="icon"
-                    src="/images/Html.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/Css.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/Js.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/C.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/git.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/node.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/react.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
+                <div className="flex flex-wrap gap-3 mt-4 items-center">
+                  <Image src="/images/Html.svg" alt="" width={30} height={30} />
+                  <Image src="/images/Css.svg" alt="" width={30} height={30} />
+                  <Image src="/images/Js.svg" alt="" width={30} height={30} />
+                  <Image src="/images/C.png" alt="" width={30} height={30} />
+                  <Image src="/images/git.svg" alt="" width={30} height={30} />
+                  <Image src="/images/node.svg" alt="" width={30} height={30} />
+                  <Image src="/images/react.png" alt="" width={30} height={30} />
                 </div>
               </div>
             </div>
@@ -133,85 +124,58 @@ export default function AboutPage() {
 
           <div
             id="Design"
-            className={`tabcontent${activeTab === "Design" ? " active" : ""}`}
+            className={`${activeTab === "Design" ? "block" : "hidden"}`}
           >
-            <div className="card">
+            <div className="bg-white shadow-md rounded-lg p-6">
               <div className="service-content">
                 <Image
-                  className="icon"
+                  className="mb-3"
                   src="/images/design.png"
                   alt=""
                   width={50}
                   height={50}
                 />
-                <h3>Design</h3>
-                <p>
-                  Crafting visually stunning designs for various media,
-                  including graphic design, video production, and motion
-                  graphics. I have a strong foundation in the Adobe Creative
-                  Suite and have worked with clients in the entertainment,
-                  fashion, and tech industries.
-                  <span className="typing-cursor">|</span>
+                <h3 className="text-xl font-semibold mb-2">Design</h3>
+                <p className="text-gray-700">
+                  Crafting visually stunning designs for various media, including
+                  graphic design, video production, and motion graphics. I have a
+                  strong foundation in the Adobe Creative Suite and have worked
+                  with clients in the entertainment, fashion, and tech
+                  industries.
+                  <span className="text-[var(--button)] ml-1">|</span>
                 </p>
-                <ul className="pill-list">
-                  <li className="pill">UI/UX Design</li>
-                  <li className="pill">Graphic Design</li>
-                  <li className="pill">Motion Graphics</li>
-                  <li className="pill">Video Production</li>
-                  <li className="pill">Adobe Creative Suite</li>
+                <ul className="flex flex-wrap gap-2 mt-4">
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    UI/UX Design
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Graphic Design
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Motion Graphics
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Video Production
+                  </li>
+                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    Adobe Creative Suite
+                  </li>
                 </ul>
-                <div className="iconcontainer">
-                  <Image
-                    className="icon"
-                    src="/images/Figma.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/photoshop.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/illustrator.png"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
-                  <Image
-                    className="icon"
-                    src="/images/aftereffects.svg"
-                    alt=""
-                    width={30}
-                    height={30}
-                  />
+                <div className="flex gap-3 mt-4 items-center">
+                  <Image src="/images/Figma.svg" alt="" width={30} height={30} />
+                  <Image src="/images/photoshop.png" alt="" width={30} height={30} />
+                  <Image src="/images/illustrator.png" alt="" width={30} height={30} />
+                  <Image src="/images/aftereffects.svg" alt="" width={30} height={30} />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* <div>
-          <h2>Education</h2>
-          <div className="grid-container">
-            <div>
-              <h3>Bachelor's Degree in Industrial Design</h3>
-              <p>OCAD University</p>
-            </div>
-            <div>
-              <h3>Web Development Postgraduate Certificate</h3>
-              <p>Humber College</p>
-            </div>
-          </div>
-        </div> */}
-        <br />
-        <br />
-        <h2> Contact Me </h2>
-        <ContactForm />
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
+          <ContactForm />
+        </div>
       </div>
     </main>
   );
