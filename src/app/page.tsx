@@ -9,6 +9,7 @@ import GSAPWrapper from "./components/GSAPWrapper";
 import projectsData from "./data/project";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import RunningText from "./components/RunningText";
 
 
 const projects = [

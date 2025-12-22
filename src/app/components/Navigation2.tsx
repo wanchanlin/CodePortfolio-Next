@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 
+
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 

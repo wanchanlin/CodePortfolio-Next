@@ -14,7 +14,7 @@ import Footer2 from "./components/Footer2";
 import { ThemeProvider } from './components/ThemeProvider'
 import GoogleAnalytics from './components/GoogleAnalytics'
 import { GA_MEASUREMENT_ID, SITE_URL } from '../config'
-
+import RunningText from './components/RunningText'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -60,8 +60,9 @@ export default function RootLayout({
         <ThemeProvider>
           {/* <Navigation /> */}
           <Navigation2 />
+          <RunningText />
 
-          <main className="pt-16">
+          <main className="min-h-screen">
             {children}
           </main>
           {/* <Footer /> */}
