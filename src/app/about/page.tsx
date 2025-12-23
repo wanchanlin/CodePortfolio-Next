@@ -9,11 +9,11 @@ export default function AboutPage() {
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-12">
-      <div className="project-container">
+      
         <section className="md:grid md:grid-cols-2 gap-8 items-center">
           <div>
             <section>
-              <p className="text-lg leading-relaxed text-gray-700">
+              <p className="text-lg leading-relaxed text-[var(--foreground)]">
                 With 9+ years at the crossroads of design and development, I
                 create engaging digital experiences that blend creativity and
                 function. From graphic design and motion graphics to web
@@ -176,7 +176,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
           <ContactForm />
         </div>
-      </div>
+      
     </main>
   );
 }
