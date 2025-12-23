@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function ContactForm() {
@@ -26,6 +27,7 @@ export default function ContactForm() {
   };
 
   return (
+    <section>
     <div className="flex gap-8 items-start max-md:flex-col max-md:items-center">
       <div className="flex-1 ">
         <p>Follow me</p>
@@ -57,6 +59,11 @@ export default function ContactForm() {
               alt="contact"
             />
           </a>
+          <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
+                    <div className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]">
+                      Resume
+                    </div>
+          </Link>
         </div>
       </div>
       
@@ -105,5 +112,6 @@ export default function ContactForm() {
         </form>
       
     </div>
+    </section>
   );
 }

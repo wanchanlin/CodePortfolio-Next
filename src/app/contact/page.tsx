@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm'
 
 export default function ContactPage() {
   return (
-    <main className="project-container px-4 py-8 md:py-16 md:px-8 lg:px-16">
+    <main className="max-w-5xl mx-auto px-4 pt-12">
         <div className="container">
           <div>
             <ContactForm />
