@@ -86,11 +86,11 @@ export default function AboutPage() {
                   height={50}
                 />
                 <h3 className="text-xl font-semibold mb-2">Program</h3>
-                <p className="text-gray-700">
+                <p className="text-[var(--foreground)]">
                   Creating dynamic and responsive websites using the latest web
                   technologies. I ensure that your website is not only visually
                   appealing but also functional and user-friendly.
-                  <span className="text-blue-600 ml-1">|</span>
+                  <span className="text-[var(--button)] ml-1">|</span>
                 </p>
                 <ul className="flex flex-wrap gap-2 mt-4">
                   <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
