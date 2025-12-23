@@ -35,7 +35,7 @@ export default function AboutPage() {
           </div>
           <div className="flex justify-center md:justify-end">
             <Image
-              src="/images/profile2.jpg"
+              src="/images/profilelight.jpg"
               alt="Professional photo"
               width={420}
               height={220}
@@ -93,7 +93,7 @@ export default function AboutPage() {
                   <span className="text-[var(--button)] ml-1">|</span>
                 </p>
                 <ul className="flex flex-wrap gap-2 mt-4">
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-gray-100 dark:bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     Full-Stack Development (HTML, CSS, JavaScript)
                   </li>
                   <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
@@ -105,7 +105,7 @@ export default function AboutPage() {
                   <li className=" dark:bg-[var(--button)] bg-gray-100 px-3 py-1 rounded-full text-sm">
                     Database Management
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-gray-100 dark:bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     API Integration
                   </li>
                 </ul>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             id="Design"
             className={`${activeTab === "Design" ? "block" : "hidden"}`}
           >
-            <div className="bg-white shadow-md rounded-lg p-6">
+            <div className="border-2 border-gray-300 shadow-md rounded-lg p-6">
               <div className="service-content">
                 <Image
                   className="mb-3"
@@ -136,7 +136,7 @@ export default function AboutPage() {
                   height={50}
                 />
                 <h3 className="text-xl font-semibold mb-2">Design</h3>
-                <p className="text-gray-700">
+                <p className="text-[var(--foreground)]">
                   Crafting visually stunning designs for various media, including
                   graphic design, video production, and motion graphics. I have a
                   strong foundation in the Adobe Creative Suite and have worked
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   <span className="text-[var(--button)] ml-1">|</span>
                 </p>
                 <ul className="flex flex-wrap gap-2 mt-4">
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-gray-100 dark:bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     UI/UX Design
                   </li>
                   <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
