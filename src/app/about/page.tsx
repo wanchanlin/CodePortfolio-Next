@@ -35,11 +35,11 @@ export default function AboutPage() {
           </div>
           <div className="flex justify-center md:justify-end">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile2.jpg"
               alt="Professional photo"
-              width={220}
+              width={420}
               height={220}
-              className="rounded-full object-cover"
+              className="rounded-sm object-cover"
             />
           </div>
         </section>
@@ -76,7 +76,7 @@ export default function AboutPage() {
             id="Program"
             className={`${activeTab === "Program" ? "block" : "hidden"}`}
           >
-            <div className="bg-white shadow-md rounded-lg p-6">
+            <div className="border-2 border-gray-300 shadow-md rounded-lg p-6">
               <div className="service-content">
                 <Image
                   className="mb-3"
@@ -96,13 +96,13 @@ export default function AboutPage() {
                   <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
                     Full-Stack Development (HTML, CSS, JavaScript)
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     React & Next.js
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     Node.js & Express
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className=" dark:bg-[var(--button)] bg-gray-100 px-3 py-1 rounded-full text-sm">
                     Database Management
                   </li>
                   <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
@@ -148,16 +148,16 @@ export default function AboutPage() {
                   <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
                     UI/UX Design
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     Graphic Design
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     Motion Graphics
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     Video Production
                   </li>
-                  <li className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                  <li className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
                     Adobe Creative Suite
                   </li>
                 </ul>
