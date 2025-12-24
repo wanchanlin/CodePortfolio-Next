@@ -78,7 +78,9 @@ export default function AboutPage() {
             id="Program"
             className={`${activeTab === "Program" ? "block" : "hidden"}`}
           >
-            <div className="border-2 border-gray-300 shadow-md rounded-lg p-6">
+            <div className="border-2 border-gray-300 pattern-square shadow-md  p-6">
+              
+             
               <div className="service-content">
                 <Image
                   className="mb-3"
