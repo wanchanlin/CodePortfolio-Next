@@ -12,6 +12,7 @@ export default function AboutPage() {
       
         <section className="md:grid md:grid-cols-2 gap-8 items-center">
           <div>
+            
             <section>
               <p className="text-lg leading-relaxed text-[var(--foreground)]">
                 With 9+ years at the crossroads of design and development, I
@@ -23,6 +24,7 @@ export default function AboutPage() {
                 life through impactful visual storytelling.
                 <span className="text-[var(--button)] ml-1">|</span>
               </p>
+              
               <a
                 className="inline-block mt-6 bg-[var(--button)] text-[var(--foreground)] px-4 py-2 rounded-md hover:bg-blue-700 transition"
                 target="_blank"
@@ -43,7 +45,7 @@ export default function AboutPage() {
             />
           </div>
         </section>
-
+        <div className="mt-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
         <section className="mt-12">
           <h2 id="services" className="text-2xl font-semibold mb-4">
             {`{ SERVICES }`}

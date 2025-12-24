@@ -205,7 +205,12 @@ body {
 }
 
 
-
+@layer utilities {
+  .pattern-dot-three {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.68 30.68"><rect fill="%2367e242" x="11.58" y="11.48" width="7.72" height="7.72"/><rect fill="%2367e242" x="3.86" y="3.76" width="7.72" height="7.72"/><rect fill="%2367e242" x="19.29" y="19.2" width="7.72" height="7.72"/></svg>');
+    background-repeat: repeat-x;
+  }
+}
 
 
 /* Footer */

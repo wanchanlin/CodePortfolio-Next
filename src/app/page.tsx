@@ -112,11 +112,11 @@ export default function Home() {
                   </span>
                   <br />
                   <br />
-                  <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
+                  {/* <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
                     <div className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]">
                       Resume
                     </div>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div>
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-
+          <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
           <h2 id="projects" className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]">{`{ PROJECTS }`}</h2>
           <Tabs defaultValue="">
             <TabsList className="grid md:grid-cols-6  grid-cols-3 gap-4 p-2 rounded-lg relative">
@@ -192,7 +192,7 @@ export default function Home() {
               </TabsContent>
             ))}
           </Tabs>
-
+ <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
       
           <h2 id="contact" className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]">{`{ CONTACT }`}</h2>
           <ContactForm />
