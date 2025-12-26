@@ -10,11 +10,11 @@ export default function AboutPage() {
   const tabs = ["Program", "Design"];
 
   return (
-    <main className="max-w-5xl mx-auto px-4 py-12">
+    <main className="max-w-5xl mx-auto px-4 py-12 font-mono ">
       {/* Hero Section */}
       <section className="md:grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <p className="text-lg leading-relaxed text-[var(--foreground)]">
+        <div className="">
+          {/* <p className="text-lg leading-relaxed text-[var(--foreground)]">
             With 9+ years at the crossroads of design and development, I
             create engaging digital experiences that blend creativity and
             function. From graphic design and motion graphics to web
@@ -23,7 +23,16 @@ export default function AboutPage() {
             Creative Suite and driven by evolving trends, I bring ideas to
             life through impactful visual storytelling.
             <span className="text-[var(--button)] ml-1">|</span>
-          </p>
+          </p> */}
+          <div>
+          <h1 className="text-xs uppercase tracking-widest mb-4 opacity-70 underline decoration-dotted  ">
+              System.Status: Online
+            </h1>
+            <p className="text-xl leading-relaxed font-bold">
+              {"> "}I blend <span className="italic underline">design</span> and <span className="italic underline">code</span> to build the future of the web. 9+ years of terminal experience.
+            </p>
+        </div>
+
         </div>
         <div className="flex justify-center md:justify-end">
           <Image

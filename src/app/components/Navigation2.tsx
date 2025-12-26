@@ -26,7 +26,7 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       <nav
         id="menu"
-        className={`fixed md:relative top-0 left-0 h-screen md:h-auto overflow-hidden flex-col md:flex-row flex items-center justify-center md:justify-start gap-8 text-gray-400 dark:text-white text-sm font-normal transition-all duration-500 ease-in-out z-50 bg-white/95 dark:bg-gray-800/50 backdrop-blur-md md:bg-transparent md:backdrop-blur-none
+        className={`fixed md:relative top-0 left-0 h-screen md:h-auto overflow-hidden flex-col md:flex-row flex items-center justify-center md:justify-start gap-8 text-gray-400 dark:text-white text-sm font-mono transition-all duration-500 ease-in-out z-50 bg-white/95 dark:bg-gray-800/50 backdrop-blur-md md:bg-transparent md:backdrop-blur-none
           ${menuOpen ? "w-full opacity-100" : "w-0 opacity-0 md:w-auto md:opacity-100"} 
         `}
       >
@@ -53,9 +53,7 @@ export default function Navigation() {
       <div className="flex items-center space-x-4 z-[60]">
         <ThemeToggle />
         
-        {/* <Link className="hidden md:flex bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-indigo-700 transition" href="#">
-          Sign up
-        </Link> */}
+       
 
         {/* Custom Animated Hamburger Toggle */}
         <button 

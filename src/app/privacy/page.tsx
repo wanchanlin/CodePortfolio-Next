@@ -3,7 +3,7 @@ import React from 'react'
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen py-8">
-      <div className="container mx-auto px-4">
+      <div className="max-w-3xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
         
         <div className="prose max-w-none">
@@ -59,8 +59,8 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold mb-4">6. Contact Us</h2>
             <p>
               If you have any questions about this Privacy Policy, please contact us at:
-              <a href="mailto:privacy@example.com" className="text-blue-500 hover:underline">
-                privacy@example.com
+              <a href="mailto: joycexwanchan@gmail.com" className="text-blue-500 hover:underline">
+                joycexwanchan@gmail.com
               </a>
             </p>
           </section>

@@ -3,7 +3,7 @@ import React from 'react'
 export default function SecurityPage() {
   return (
     <main className="min-h-screen py-8">
-      <div className="container mx-auto px-4">
+      <div className="max-w-3xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-8">Security</h1>
         
         <div className="prose max-w-none">
@@ -68,8 +68,8 @@ export default function SecurityPage() {
             <h2 className="text-2xl font-bold mb-4">6. Contact Us</h2>
             <p>
               If you have any security concerns or questions, please contact our security team at:
-              <a href="mailto:security@example.com" className="text-blue-500 hover:underline">
-                security@example.com
+              <a href="mailto: Joycexwanchan@gmail.com" className="text-blue-500 hover:underline">
+                Joycexwanchan@gmail.com
               </a>
             </p>
           </section>
