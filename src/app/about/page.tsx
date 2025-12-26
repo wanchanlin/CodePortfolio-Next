@@ -25,14 +25,7 @@ export default function AboutPage() {
                 <span className="text-[var(--button)] ml-1">|</span>
               </p>
               
-              <a
-                className="inline-block mt-6 bg-[var(--button)] text-[var(--foreground)] px-4 py-2 rounded-md hover:bg-blue-700 transition"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://drive.google.com/file/d/1m5Zy2mz5g-fkOUsSy4ZigErFfSVLciCl/view?usp=sharing"
-              >
-                Resume
-              </a>
+             
             </section>
           </div>
           <div className="flex justify-center md:justify-end">

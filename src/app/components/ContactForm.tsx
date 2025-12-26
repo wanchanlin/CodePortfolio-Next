@@ -60,10 +60,13 @@ export default function ContactForm() {
             />
           </a>
           <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
-                    <div className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]">
-                      Resume
-                    </div>
-          </Link>
+                   
+          
+
+          <button className="border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold">
+              [ DOWNLOAD_RESUME ]
+            </button>
+            </Link>
         </div>
       </div>
       
