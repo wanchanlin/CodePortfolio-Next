@@ -135,7 +135,7 @@ export default function Home() {
             <TabsList className="grid md:grid-cols-6  grid-cols-3 gap-4 p-2 rounded-lg relative">
               <TabsTrigger
                 value=""
-                className="relative py-2 px-4 text-sm font-medium rounded-lg border-2 border-[#c7ebbc] transition-all duration-200 cursor-pointer flex items-center gap-2 data-[state=active]:bg-[var(--button)] data-[state=inactive]:bg-[var(--background)] data-[state=inactive]:text-[var(--foreground)]"
+                className=" gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
                 data-state={selectedTechnologies.length === 0 ? 'active' : 'inactive'}
               >
                 All
@@ -168,7 +168,7 @@ export default function Home() {
                       setSelectedTechnologies([...selectedTechnologies, tech]);
                     }
                   }}
-                  className="relative py-2 px-4 text-sm font-medium rounded-lg border-2 border-[#c7ebbc] transition-all duration-200 cursor-pointer flex items-center gap-2 data-[state=active]:bg-[var(--button)] data-[state=inactive]:bg-[var(--background)] data-[state=inactive]:text-[var(--foreground)]"
+                  className=" gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
                   data-state={selectedTechnologies.includes(tech) ? 'active' : 'inactive'}
                 >
                   {tech}
