@@ -70,7 +70,7 @@ export default function ContactForm() {
         </div>
       </div>
       
-        <form onSubmit={handleSubmit} className="w-1/2 flex flex-col gap-4 mx-auto max-md:w-full ">
+        <form onSubmit={handleSubmit} className="w-full md:w-1/2 flex flex-col gap-6  ">
           <div>
             <label htmlFor="name">Name</label> <br />
             <input
@@ -79,7 +79,7 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-[95%] p-2 border border-[var(--foreground)] rounded-md"
+              className="w-full p-3 bg-transparent border-2 border-[var(--retro-primary)] rounded-pixel-lg focus:outline-none focus:bg-[var(--retro-primary)]/10 transition-all"
               required
             />
           </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-[95%] p-2 border border-[var(--foreground)] rounded-md"
+              className="w-full p-3 bg-transparent border-2 border-[var(--retro-primary)] rounded-pixel-lg focus:outline-none focus:bg-[var(--retro-primary)]/10 transition-all"
               required
             />
           </div>
@@ -105,11 +105,11 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-[95%] p-2 border border-[var(--foreground)] rounded-md"
+              className="w-full p-3 bg-transparent border-2 border-[var(--retro-primary)] rounded-pixel-lg focus:outline-none focus:bg-[var(--retro-primary)]/10 transition-all"
               required
             />
           </div>
-          <button className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]" type="submit">
+          <button className=" w-fit gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold" type="submit">
             Send Message
           </button>
         </form>

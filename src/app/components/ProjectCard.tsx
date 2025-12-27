@@ -50,7 +50,7 @@ export default function ProjectCard({
             ))}
           </div>
           <p className='text-sm text-[var(--foreground)] t'>{description}</p>
-          <Link href={link} className=" gap-2 text-base flex justify-left w-fit no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] items-center rounded-md hover:bg-[var(--button)]">
+          <Link href={link} className=" w-fit gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold">
             View More
             <FontAwesomeIcon icon={faChevronRight} className="chevron" />
           </Link>
