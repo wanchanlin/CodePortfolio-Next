@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -36,7 +40,7 @@ export default function ContactForm() {
           we'd love to hear about your project and provide help.
         </p>
         <div className="mt-4 flex items-center justify-left">
-          <a
+          {/* <a
             href="https://github.com/wanchanlin"
             target="_blank"
             rel="noopener noreferrer"
@@ -46,9 +50,22 @@ export default function ContactForm() {
               src="/images/github.svg"
               alt="contact"
             />
-          </a>
+          </a> */}
+           <Link
+                href="https://github.com/wanchanlin"
+                target="_blank"
+               
+                >
+                <FontAwesomeIcon icon={faGithub} className='text-4xl mr-4'/>
+            </Link>
+             <Link
+                href="https://www.linkedin.com/in/wanchanlin/"
+                target="_blank"
+                >
+                <FontAwesomeIcon icon={faLinkedin} className='text-4xl mr-4'/>
+            </Link>
 
-          <a
+          {/* <a
             href="https://www.linkedin.com/in/wanchanlin/"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,7 +75,7 @@ export default function ContactForm() {
               src="/images/linkedin.svg"
               alt="contact"
             />
-          </a>
+          </a> */}
           <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
                    
           

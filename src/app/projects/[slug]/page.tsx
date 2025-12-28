@@ -91,7 +91,7 @@ export default function ProjectPage({ params }: PageProps) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]"
+                  className="gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
                 >
                   GitHub <FontAwesomeIcon icon={faGithub}/>
                 </Link>
@@ -101,7 +101,7 @@ export default function ProjectPage({ params }: PageProps) {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]"
+                  className="gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
                 >
                   Live Demo <FontAwesomeIcon icon={faLaptopCode} />
                 </Link>
