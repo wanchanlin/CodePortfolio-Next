@@ -98,8 +98,26 @@ export default function Home() {
   return (
     <GSAPWrapper>
       <main>
-        <div className=" max-w-[1000px] mx-auto px-4 font-mono ">
-          
+        <div className=" max-w-[1000px] mx-auto px-4 ">
+          <section className="mt-24 flex flex-col justify-between">
+            
+              <div>
+                <div id="hero-text" className="flex flex-col text-center  justify-between">
+                  <span className="text-3xl font-semibold text-[var(--foreground)]">Hi, I am Joyce</span>
+                  <br />
+                  <span className="scramble md:text-7xl text-4xl font-semibold text-[var(--foreground)]">
+                   {" "}
+                    <span className="animate-[blink_1s_step-end_infinite]">|</span>
+                  </span>
+                  <br />
+                  <br />
+                 
+                </div>
+             
+              
+            </div>
+          </section>
+{/*           
           <section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
               <div>
@@ -112,23 +130,12 @@ export default function Home() {
                   </span>
                   <br />
                   <br />
-                  {/* <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
-                    <div className="text-base inline-block no-underline py-2 px-4 bg-[var(--button)] text-[var(--foreground)] rounded cursor-pointer transition-colors duration-300 border-0 hover:bg-[var(--button)]">
-                      Resume
-                    </div>
-                  </Link> */}
+                 
                 </div>
               </div>
-              <div>
-                <iframe
-                  className="w-full h-full min-h-[300px] border-0 rounded-[10px]"
-                  src="https://my.spline.design/developwe-f3cc7a88c680ba4cf806a9340e3e9ede/"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
+         
             </div>
-          </section>
+          </section> */}
           <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
           <h2 id="projects" className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]">{`{ PROJECTS }`}</h2>
           <Tabs defaultValue="">
