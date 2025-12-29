@@ -40,17 +40,7 @@ export default function ContactForm() {
           we'd love to hear about your project and provide help.
         </p>
         <div className="mt-4 flex items-center justify-left">
-          {/* <a
-            href="https://github.com/wanchanlin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="w-[30px] h-[30px] mr-4"
-              src="/images/github.svg"
-              alt="contact"
-            />
-          </a> */}
+         
            <Link
                 href="https://github.com/wanchanlin"
                 target="_blank"
@@ -65,17 +55,7 @@ export default function ContactForm() {
                 <FontAwesomeIcon icon={faLinkedin} className='text-4xl mr-4'/>
             </Link>
 
-          {/* <a
-            href="https://www.linkedin.com/in/wanchanlin/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="w-[30px] h-[30px] mr-4"
-              src="/images/linkedin.svg"
-              alt="contact"
-            />
-          </a> */}
+        
           <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
                    
           

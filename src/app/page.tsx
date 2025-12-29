@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <GSAPWrapper>
       <main>
-        <div className=" max-w-[1000px] mx-auto px-8 font-mono ">
+        <div className=" max-w-[1000px] mx-auto px-4 font-mono ">
           
           <section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
