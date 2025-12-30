@@ -1,38 +1,34 @@
-import nodemailer from 'nodemailer'
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Initialize Resend with your API Key (Add this to your .env.local)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const data = await req.json()
-    const { name, email, message } = data || {}
+    const { name, email, message, subject_line } = await req.json();
 
-    if (!email || !message) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+    // 1. Simple Honeypot Check
+    if (subject_line) {
+      return NextResponse.json({ error: "Bot detected" }, { status: 400 });
     }
 
-    // create transporter — configure via environment variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT ?? 587),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
+    // 2. Basic Validation
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    }
 
-    const mailOptions = {
-      from: `${name || 'Website Contact'} <${process.env.SMTP_USER}>`,
-      to: process.env.TO_EMAIL || 'ohanalin@gmail.com',
-      subject: 'Contact form submission',
+    // 3. Send the Email
+    const data = await resend.emails.send({
+      from: 'Portfolio <onboarding@resend.dev>', // Use a verified domain in production
+      to: 'ohanalin@gmail.com',
+      reply_to: email,
+      subject: `New Contact Form: ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    }
+    });
 
-    await transporter.sendMail(mailOptions)
-
-    return NextResponse.json({ ok: true })
-  } catch (err: any) {
-    console.error(err)
-    return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
+    return NextResponse.json({ success: true, data });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

@@ -10,90 +10,95 @@ export default function ContactForm() {
     name: "",
     email: "",
     message: "",
+    subject_line: "", // Honeypot field
   });
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<null | { ok: boolean; msg: string }>(null);
 
+  // Helper to trigger mailto fallback
+  const triggerMailto = () => {
+    const subject = encodeURIComponent("Contact form submission");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:ohanalin@gmail.com?subject=${subject}&body=${body}`;
+    setStatus({ ok: true, msg: "Server unreachable — opened mail client." });
+    setFormData({ name: "", email: "", message: "", subject_line: "" });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Bot check
+    if (formData.subject_line) return;
+
     setSubmitting(true);
     setStatus(null);
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      const data = await res.json();
+
+      // Safely parse response: prefer JSON, fallback to text (handles HTML error pages)
+      const contentType = (res.headers.get('content-type') || '').toLowerCase();
+      let data: any = null;
+      let textBody: string | null = null;
+      if (contentType.includes('application/json')) {
+        data = await res.json();
+      } else {
+        textBody = await res.text();
+        data = { error: textBody };
+      }
 
       if (!res.ok) {
-        // server error -> fallback to mailto
-        if (res.status >= 500 || (data?.error && /connect|refuse|failed|send/i.test(data.error))) {
-          const subject = encodeURIComponent("Contact form submission");
-          const body = encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-          );
-          window.location.href = `mailto:ohanalin@gmail.com?subject=${subject}&body=${body}`;
-          setStatus({ ok: true, msg: "Server error — opened mail client to send message." });
-          setFormData({ name: "", email: "", message: "" });
+        // Trigger fallback for server errors (500s) or connection issues
+        if (res.status >= 500 || /connect|refuse|failed/i.test(data?.error || textBody || '')) {
+          triggerMailto();
           return;
         }
         throw new Error(data?.error || 'Submission failed');
       }
 
       setStatus({ ok: true, msg: 'Message sent — thank you!' });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', subject_line: '' });
+
     } catch (err: any) {
-      const message = err?.message || '';
-      if (/ECONNREFUSED|ENOTFOUND|Failed to send|connect/i.test(message)) {
-        const subject = encodeURIComponent("Contact form submission");
-        const body = encodeURIComponent(
-          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-        );
-        window.location.href = `mailto:ohanalin@gmail.com?subject=${subject}&body=${body}`;
-        setStatus({ ok: true, msg: "Could not reach mail server — opened mail client." });
-        setFormData({ name: "", email: "", message: "" });
+      const msg = (err && err.message) || '';
+      if (/fetch|connect|network|ECONNREFUSED|ENOTFOUND/i.test(msg)) {
+        triggerMailto();
       } else {
-        setStatus({ ok: false, msg: message || 'Submission error' });
+        setStatus({ ok: false, msg: msg || 'Error sending message' });
       }
     } finally {
       setSubmitting(false);
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <section>
       <div className="flex gap-8 items-start max-md:flex-col max-md:items-center">
         <div className="flex-1 ">
-          <p>Follow me</p>
-          <p>
-            Have some big idea or brand to develop and need help? Then reach out
-            we'd love to hear about your project and provide help.
+          <p className="text-xl font-bold mb-2">Follow me</p>
+          <p className="opacity-80">
+            Have a big idea or a brand to develop? Reach out—I'd love to hear about 
+            your project and see how I can help.
           </p>
-          <div className="mt-4 flex items-center justify-left">
-            <Link
-              href="https://github.com/wanchanlin"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faGithub} className='text-4xl mr-4'/>
+          
+          <div className="mt-6 flex items-center gap-4">
+            <Link href="https://github.com/wanchanlin" target="_blank" aria-label="GitHub">
+              <FontAwesomeIcon icon={faGithub} className='text-4xl hover:text-[var(--retro-primary)] transition-colors'/>
             </Link>
-            <Link
-              href="https://www.linkedin.com/in/wanchanlin/"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faLinkedin} className='text-4xl mr-4'/>
+            <Link href="https://www.linkedin.com/in/wanchanlin/" target="_blank" aria-label="LinkedIn">
+              <FontAwesomeIcon icon={faLinkedin} className='text-4xl hover:text-[var(--retro-primary)] transition-colors'/>
             </Link>
-
             <Link href="https://drive.google.com/file/d/1WMRM53EZVsGQciQ1KZ6U-PWWpXPaP5XD/view?usp=sharing">
               <button className="border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold">
                 [ DOWNLOAD_RESUME ]
@@ -102,9 +107,20 @@ export default function ContactForm() {
           </div>
         </div>
         
-        <form onSubmit={handleSubmit} className="w-full md:w-1/2 flex flex-col gap-6  ">
+        <form onSubmit={handleSubmit} className="w-full md:w-1/2 flex flex-col gap-5">
+          {/* Honeypot: Hidden from users, visible to bots */}
+          <input 
+            type="text" 
+            name="subject_line" 
+            value={formData.subject_line} 
+            onChange={handleChange} 
+            className="hidden" 
+            tabIndex={-1} 
+            autoComplete="off" 
+          />
+
           <div>
-            <label htmlFor="name">Name</label> <br />
+            <label htmlFor="name" className="block mb-1">Name</label>
             <input
               type="text"
               id="name"
@@ -115,9 +131,9 @@ export default function ContactForm() {
               required
             />
           </div>
+
           <div>
-            <label> Email </label>
-            <br />
+            <label htmlFor="email" className="block mb-1">Email</label>
             <input
               type="email"
               id="email"
@@ -128,35 +144,36 @@ export default function ContactForm() {
               required
             />
           </div>
+
           <div>
-            <label htmlFor="message">Message</label>
-            <br />
+            <label htmlFor="message" className="block mb-1">Message</label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-full p-3 bg-transparent border-2 border-[var(--retro-primary)] rounded-pixel-lg focus:outline-none focus:bg-[var(--retro-primary)]/10 transition-all"
+              className="w-full p-3 bg-transparent border-2 border-[var(--retro-primary)] rounded-pixel-lg focus:outline-none focus:bg-[var(--retro-primary)]/10 transition-all resize-none"
               required
             />
           </div>
+
           <div className="flex items-center gap-4">
             <button
-              className="w-fit gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold disabled:opacity-50"
+              className="w-fit border-2 border-[var(--retro-primary)] px-8 py-3 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold disabled:opacity-50 disabled:cursor-not-allowed active:translate-y-0.5"
               type="submit"
               disabled={submitting}
             >
-              {submitting ? 'Sending…' : 'Send Message'}
+              {submitting ? 'SENDING...' : 'SEND MESSAGE'}
             </button>
+            
             {status && (
-              <span className={`${status.ok ? 'text-green-400' : 'text-red-400'}`}>
+              <span className={`text-sm font-bold ${status.ok ? 'text-green-400' : 'text-red-400'}`}>
                 {status.msg}
               </span>
             )}
           </div>
         </form>
-      
       </div>
     </section>
   );
