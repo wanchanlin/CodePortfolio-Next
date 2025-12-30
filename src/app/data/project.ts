@@ -46,7 +46,7 @@ const projects: Record<string, Project> = {
       "Historical Immersion: Engage with real events and fictionalized scenarios inspired by the US–Cuba conflict.",
       "Interactive maps and guides",
     ],
-    demo: "https://balanceofpower.kvieve.com/",
+    demo: "https://balance-of-power.vercel.app/",
     github: "https://github.com/awsactivators/balance-of-power-game.git",
     members: [
       { name: "Heather", url: "https://github.com/heatherfeather-code" },
