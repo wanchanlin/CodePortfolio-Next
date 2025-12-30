@@ -42,20 +42,11 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      // Safely parse response: prefer JSON, fallback to text (handles HTML error pages)
-      const contentType = (res.headers.get('content-type') || '').toLowerCase();
-      let data: any = null;
-      let textBody: string | null = null;
-      if (contentType.includes('application/json')) {
-        data = await res.json();
-      } else {
-        textBody = await res.text();
-        data = { error: textBody };
-      }
+      const data = await res.json();
 
       if (!res.ok) {
         // Trigger fallback for server errors (500s) or connection issues
-        if (res.status >= 500 || /connect|refuse|failed/i.test(data?.error || textBody || '')) {
+        if (res.status >= 500 || /connect|refuse|failed/i.test(data?.error)) {
           triggerMailto();
           return;
         }
@@ -66,11 +57,10 @@ export default function ContactForm() {
       setFormData({ name: '', email: '', message: '', subject_line: '' });
 
     } catch (err: any) {
-      const msg = (err && err.message) || '';
-      if (/fetch|connect|network|ECONNREFUSED|ENOTFOUND/i.test(msg)) {
+      if (/fetch|connect|network/i.test(err.message)) {
         triggerMailto();
       } else {
-        setStatus({ ok: false, msg: msg || 'Error sending message' });
+        setStatus({ ok: false, msg: err.message || 'Error sending message' });
       }
     } finally {
       setSubmitting(false);

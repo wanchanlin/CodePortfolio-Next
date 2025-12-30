@@ -1,15 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import ProjectCard from "./components/ProjectCard";
 import ContactForm from "./components/ContactForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import GSAPWrapper from "./components/GSAPWrapper";
-import projectsData from "./data/project";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-import RunningText from "./components/RunningText";
+
 
 
 const projects = [
