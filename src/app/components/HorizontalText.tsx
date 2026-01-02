@@ -63,7 +63,7 @@ export default function HorizontalScrollText() {
       <div className="flex w-max-content">
         <p 
           ref={textRef}
-          className="flex whitespace-nowrap gap-[4vw] pl-[50vw] font-semibold leading-[1.1] text-[clamp(2rem,10vw,12rem)]"
+          className="flex whitespace-nowrap gap-[4vw] pl-[10vw] font-semibold leading-[1.1] text-[clamp(2rem,10vw,10rem)] pr-[10vw] "
         >
          A designer🎨–developer 👩🏻‍💻 crafting digital ideas, inspired by birds 🐦 and fueled by cooking🍳.
         </p>
