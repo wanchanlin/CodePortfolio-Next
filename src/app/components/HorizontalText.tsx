@@ -3,69 +3,70 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// Note: SplitText is a GSAP Premium plugin (Club GSAP)
 import { SplitText } from "gsap/SplitText"; 
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function HorizontalScrollText() {
   const componentRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 0px)", () => {
       if (!textRef.current || !componentRef.current) return;
 
-      // 1. Split the text
       const split = new SplitText(textRef.current, { type: "chars, words" });
+      
+      // Calculate how far the text needs to move
+      // (Total width of text - width of the viewport)
+      const getScrollAmount = () => {
+        let textWidth = textRef.current?.offsetWidth || 0;
+        return -(textWidth - window.innerWidth);
+      };
 
-      // 2. Create the horizontal scroll tween
       const scrollTween = gsap.to(textRef.current, {
-        xPercent: -100,
-        x: "100vw", // Offsets the initial padding to ensure it scrolls all the way
+        x: getScrollAmount,
         ease: "none",
         scrollTrigger: {
           trigger: componentRef.current,
           pin: true,
           start: "top top",
-          end: "+=6000px",
-          scrub: true,
-          invalidateOnRefresh: true,
+          // Adjust scroll length based on text width for a consistent feel
+          end: () => `+=${textRef.current?.offsetWidth}`,
+          scrub: 1,
+          invalidateOnRefresh: true, // Crucial for responsiveness
         },
       });
 
-      // 3. Animate characters using containerAnimation
       split.chars.forEach((char) => {
         gsap.from(char, {
-          yPercent: () => gsap.utils.random(-200, 200),
-          rotation: () => gsap.utils.random(-20, 20),
+          yPercent: () => gsap.utils.random(-100, 100),
           opacity: 0,
-          ease: "back.out(1.2)",
           scrollTrigger: {
             trigger: char,
             containerAnimation: scrollTween,
-            start: "left 90%",
-            end: "left 30%",
-            scrub: 1,
+            start: "left 95%",
+            end: "left 60%",
+            scrub: true,
           },
         });
       });
-    }, componentRef); // Scope selectors to the component ref
+    });
 
-    return () => ctx.revert(); // Cleanup on unmount
+    return () => mm.revert();
   }, []);
 
   return (
-    <section 
-      ref={componentRef} 
-      className="overflow-hidden h-screen flex items-center "
-    >
-      <div className="flex w-max-content">
+    <section ref={componentRef} className="overflow-hidden h-screen flex items-center ">
+      {/* Use w-fit so the container wraps the text size exactly */}
+      <div className="flex w-fit">
         <p 
           ref={textRef}
-          className="flex whitespace-nowrap gap-[4vw] pl-[10vw] font-semibold leading-[1.1] text-[clamp(2rem,10vw,10rem)] pr-[10vw] "
+          className="whitespace-nowrap px-[10vw] font-semibold leading-[1.1] text-[12vw] md:text-[10vw] lg:text-[8vw]"
         >
-         A designer🎨–developer 👩🏻‍💻 crafting digital ideas, inspired by birds 🐦 and fueled by cooking🍳.
+          A designer🎨–developer 👩🏻‍💻 crafting digital ideas, inspired by birds 🐦 and fueled by cooking🍳.
         </p>
       </div>
     </section>
