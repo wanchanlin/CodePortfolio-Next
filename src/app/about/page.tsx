@@ -84,7 +84,7 @@ export default function AboutPage() {
               </p>
               <ul className="flex flex-wrap gap-2 mt-4">
                 {["Full-Stack Development", "React & Next.js", "Node.js & Express", "Database Management", "API Integration"].map((skill) => (
-                   <li key={skill} className="bg-gray-100 dark:bg-[var(--button)] px-3 py-1 rounded-full text-sm">
+                   <li key={skill} className="bg-[var(--button)] text-black px-3 py-1 rounded-full text-sm">
                     {skill}
                    </li>
                 ))}
@@ -114,7 +114,7 @@ export default function AboutPage() {
               </p>
               <ul className="flex flex-wrap gap-2 mt-4">
                 {["UI/UX Design", "Graphic Design", "Motion Graphics", "Video Production", "Adobe Creative Suite"].map((skill) => (
-                   <li key={skill} className="bg-[var(--button)] px-3 py-1 rounded-full text-sm">
+                   <li key={skill} className="bg-[var(--button)] text-black px-3 py-1 rounded-full text-sm">
                     {skill}
                    </li>
                 ))}

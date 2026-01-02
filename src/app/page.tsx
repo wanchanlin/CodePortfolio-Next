@@ -133,7 +133,7 @@ export default function Home() {
           <section>
             <HorizontalText />
           </section>
-          <section className="w-max-[1000px] mx-auto my-24">
+          <section className=" md:max-w-5xl mx-auto my-24">
           <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
           <h2
             id="projects"
@@ -211,7 +211,7 @@ export default function Home() {
             ))}
           </Tabs>
           </section>
-          <section className="w-max-[1000px] mx-auto my-24">
+          <section className="md:max-w-5xl  mx-auto my-24">
           <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
 
           <h2
