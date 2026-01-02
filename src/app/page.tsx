@@ -2,13 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./components/ProjectCard";
+import Link from "next/link"; // added
+import dynamic from "next/dynamic"; // added
 import ContactForm from "./components/ContactForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import GSAPWrapper from "./components/GSAPWrapper";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+// import  HorizontalText  from "./components/HorizontalText";
 
-
+// client-only import to prevent GSAP plugin code from running on the server
+const HorizontalText = dynamic(() => import("./components/HorizontalText"), { ssr: false });
 
 const projects = [
   {
@@ -82,66 +86,67 @@ export default function Home() {
 
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
 
-  const allTechnologies = [...new Set(projects.flatMap(project => project.technologies))];
-  const filteredProjects = selectedTechnologies.length > 0
-    ? projects.filter(project =>
-        project.technologies.some(tech =>
-          selectedTechnologies.some(selectedTech =>
-            tech.toLowerCase() === selectedTech.toLowerCase()
+  const allTechnologies = [
+    ...new Set(projects.flatMap((project) => project.technologies)),
+  ];
+  const filteredProjects =
+    selectedTechnologies.length > 0
+      ? projects.filter((project) =>
+          project.technologies.some((tech) =>
+            selectedTechnologies.some(
+              (selectedTech) => tech.toLowerCase() === selectedTech.toLowerCase()
+            )
           )
         )
-      )
-    : projects;
+      : projects;
 
   return (
     <GSAPWrapper>
       <main>
-        <div className=" max-w-[1000px] mx-auto px-4 ">
-          <section className="mt-24 flex flex-col justify-between">
-            
-              <div>
-                <div id="hero-text" className="flex flex-col text-center  justify-between">
-                  <span className="text-3xl font-semibold text-[var(--foreground)]">Hi, I am Joyce</span>
-                  <br />
-                  <span className="scramble md:text-7xl text-4xl font-semibold text-[var(--foreground)]">
-                   {" "}
-                    <span className="animate-[blink_1s_step-end_infinite]">|</span>
-                  </span>
-                  <br />
-                  <br />
-                 
-                </div>
-             
-              
-            </div>
-          </section>
-{/*           
-          <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
-              <div>
-                <div id="hero-text" className="mt-4 flex flex-col justify-between">
-                  <span className="text-[1.5rem] font-semibold text-[var(--foreground)]">Hi, I am Joyce</span>
-                  <br />
-                  <span className="scramble text-[2rem] font-semibold text-[var(--foreground)]">
-                   {" "}
-                    <span className="animate-[blink_1s_step-end_infinite]">|</span>
-                  </span>
-                  <br />
-                  <br />
-                 
-                </div>
+        <div className=" px-4 ">
+          <section className="mx-auto max-w-5xl h-[60vh] mt-24 flex flex-col justify-between">
+            <div>
+              <div
+                id="hero-text"
+                className="flex flex-col text-center  justify-between"
+              >
+                <span className="text-3xl font-semibold text-[var(--foreground)]">
+                  Hi, I am Joyce
+                </span>
+                <br />
+                <span className="scramble md:text-7xl text-4xl font-semibold text-[var(--foreground)]">
+                  {" "}
+                  <span className="animate-[blink_1s_step-end_infinite]">|</span>
+                </span>
+                <br />
+                <br />
               </div>
-         
             </div>
-          </section> */}
+            {/* replaced invalid lowercase <link> with Next.js <Link> */}
+            <Link
+              href="#projects"
+              className=" mx-auto ap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
+            >
+              View My Work
+            </Link>
+          </section>
+          <section>
+            <HorizontalText />
+          </section>
+          <section className="w-max mx-auto my-24">
           <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
-          <h2 id="projects" className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]">{`{ PROJECTS }`}</h2>
+          <h2
+            id="projects"
+            className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]"
+          >{`{ PROJECTS }`}</h2>
           <Tabs defaultValue="">
             <TabsList className="grid md:grid-cols-6  grid-cols-3 gap-4 p-2 rounded-lg relative">
               <TabsTrigger
                 value=""
                 className=" gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
-                data-state={selectedTechnologies.length === 0 ? 'active' : 'inactive'}
+                data-state={
+                  selectedTechnologies.length === 0 ? "active" : "inactive"
+                }
               >
                 All
                 {selectedTechnologies.length > 0 && (
@@ -168,13 +173,21 @@ export default function Home() {
                   value={tech}
                   onClick={() => {
                     if (selectedTechnologies.includes(tech)) {
-                      setSelectedTechnologies(selectedTechnologies.filter(t => t !== tech));
+                      setSelectedTechnologies(
+                        selectedTechnologies.filter((t) => t !== tech)
+                      );
                     } else {
-                      setSelectedTechnologies([...selectedTechnologies, tech]);
+                      setSelectedTechnologies([
+                        ...selectedTechnologies,
+                        tech,
+                      ]);
                     }
                   }}
-                  className=" gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
-                  data-state={selectedTechnologies.includes(tech) ? 'active' : 'inactive'}
+                  className=" gap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg
+              hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
+                  data-state={
+                    selectedTechnologies.includes(tech) ? "active" : "inactive"
+                  }
                 >
                   {tech}
                 </TabsTrigger>
@@ -197,10 +210,17 @@ export default function Home() {
               </TabsContent>
             ))}
           </Tabs>
- <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
-      
-          <h2 id="contact" className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]">{`{ CONTACT }`}</h2>
+          </section>
+          <section className="w-max mx-auto my-24">
+          <div className="my-12 w-full bg-size-[0.7em] h-4 bg-repeat-x bg-size-[1.4em] md:bg-size-[2em] h-8 pattern-dot-three"></div>
+
+          <h2
+            id="contact"
+            className="text-[1.6rem] text-center font-semibold text-[var(--foreground)]"
+          >{`{ CONTACT }`}</h2>
           <ContactForm />
+        
+        </section>
         </div>
       </main>
     </GSAPWrapper>
