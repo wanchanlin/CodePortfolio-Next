@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import GSAPWrapper from "./components/GSAPWrapper";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import BinaryGrid from "./components/BinaryGrid";
 // import  HorizontalText  from "./components/HorizontalText";
 
 // client-only import to prevent GSAP plugin code from running on the server
@@ -122,13 +123,14 @@ export default function Home() {
                 <br />
               </div>
             </div>
+            <BinaryGrid />
             {/* replaced invalid lowercase <link> with Next.js <Link> */}
-            <Link
+            {/*  <Link
               href="#projects"
               className=" mx-auto ap-2 flex items-center border-2 border-[var(--retro-primary)] px-6 py-2 rounded-pixel-lg hover:bg-[var(--retro-primary)] hover:text-[var(--retro-bg)] transition-all font-bold"
             >
               View My Work
-            </Link>
+            </Link>*/}
           </section>
           <section>
             <HorizontalText />
